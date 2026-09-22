@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8b98a5"/></marker>
+  </defs>
+  <rect width="1200" height="420" rx="16" fill="#0b0d10"/>
+  <text x="36" y="44" font-size="20" font-weight="800" fill="#e6edf3">ASSINATURA · o advertorial agressivo, por dentro</text>
+  <text x="36" y="66" font-size="12" fill="#8b98a5">uma marca sem rosto, servida por várias Páginas com nome de pessoa e audiência ~0, empurrando um quiz cujo preço só aparece depois</text>
+
+  <!-- marca -->
+  <g transform="translate(36 120)">
+    <rect width="200" height="180" rx="14" fill="#14181d" stroke="#e5484d"/>
+    <text x="100" y="34" font-size="13" font-weight="800" fill="#ff8a8e" text-anchor="middle">MARCA SEM ROSTO</text>
+    <circle cx="100" cy="88" r="30" fill="#1a1f26" stroke="#30363d"/>
+    <text x="100" y="94" font-size="22" fill="#8b98a5" text-anchor="middle">?</text>
+    <text x="100" y="140" font-size="11" fill="#c9d1d9" text-anchor="middle">nenhuma Página oficial</text>
+    <text x="100" y="158" font-size="11" fill="#c9d1d9" text-anchor="middle">e-mail da marca nos perfis</text>
+  </g>
+
+  <!-- personas -->
+  <g transform="translate(300 100)">
+    <text x="130" y="0" font-size="11" font-weight="700" fill="#8b98a5" text-anchor="middle" letter-spacing="1">≥ 3 PÁGINAS-PERSONA</text>
+    <g transform="translate(0 14)">
+      <rect width="260" height="54" rx="10" fill="#14181d" stroke="#3fb950"/>
+      <circle cx="28" cy="27" r="16" fill="#1f3a26"/><text x="28" y="32" font-size="13" fill="#7ee787" text-anchor="middle">L</text>
+      <text x="56" y="22" font-size="12" font-weight="700" fill="#e6edf3">Lena K.</text>
+      <text x="56" y="40" font-size="11" fill="#8b98a5">Blog pessoal · 31 seguidores · seguindo 0</text>
+    </g>
+    <g transform="translate(0 80)">
+      <rect width="260" height="54" rx="10" fill="#14181d" stroke="#3fb950"/>
+      <circle cx="28" cy="27" r="16" fill="#1f3a26"/><text x="28" y="32" font-size="13" fill="#7ee787" text-anchor="middle">M</text>
+      <text x="56" y="22" font-size="12" font-weight="700" fill="#e6edf3">Marta S.</text>
+      <text x="56" y="40" font-size="11" fill="#8b98a5">Blog pessoal · 118 seguidores · seguindo 0</text>
+    </g>
+    <g transform="translate(0 146)">
+      <rect width="260" height="54" rx="10" fill="#14181d" stroke="#3fb950"/>
+      <circle cx="28" cy="27" r="16" fill="#1f3a26"/><text x="28" y="32" font-size="13" fill="#7ee787" text-anchor="middle">J</text>
+      <text x="56" y="22" font-size="12" font-weight="700" fill="#e6edf3">Julia R.</text>
+      <text x="56" y="40" font-size="11" fill="#8b98a5">Blog pessoal · 6 seguidores · seguindo 0</text>
+    </g>
+    <text x="130" y="228" font-size="10" fill="#8b98a5" text-anchor="middle">nome de pessoa · sem "with &lt;Marca&gt;" · sem número · 1–350 seguidores</text>
+  </g>
+  <line x1="236" y1="210" x2="300" y2="141" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="236" y1="210" x2="300" y2="207" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+  <line x1="236" y1="210" x2="300" y2="273" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- copy -->
+  <g transform="translate(600 120)">
+    <rect width="230" height="180" rx="14" fill="#14181d" stroke="#2f81f7"/>
+    <text x="115" y="30" font-size="13" font-weight="800" fill="#79c0ff" text-anchor="middle">COPY EM 1ª PESSOA</text>
+    <text x="16" y="62" font-size="12" fill="#e6edf3">"tenho 52 anos, era</text>
+    <text x="16" y="80" font-size="12" fill="#e6edf3">enfermeira…"</text>
+    <text x="16" y="112" font-size="11" fill="#c9d1d9">frase de FUNIL:</text>
+    <text x="16" y="130" font-size="11" fill="#79c0ff">"faça o teste" · "plano</text>
+    <text x="16" y="148" font-size="11" fill="#79c0ff">personalizado" · "descubra se"</text>
+    <text x="16" y="168" font-size="10" fill="#8b98a5">nunca termo de vaga/recrutamento</text>
+  </g>
+  <line x1="560" y1="210" x2="600" y2="210" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- quiz -->
+  <g transform="translate(870 120)">
+    <rect width="294" height="180" rx="14" fill="#14181d" stroke="#d29922"/>
+    <text x="147" y="30" font-size="13" font-weight="800" fill="#e3b341" text-anchor="middle">QUIZ NO DESTINO</text>
+    <text x="16" y="60" font-size="11" fill="#c9d1d9">quiz.marca.tld · atribuição 598/598</text>
+    <g transform="translate(16 76)">
+      <rect width="262" height="22" rx="6" fill="#1a1f26"/><text x="10" y="15" font-size="11" fill="#e6edf3">1. Qual o seu objetivo?</text>
+      <rect y="28" width="262" height="22" rx="6" fill="#1a1f26"/><text x="10" y="43" font-size="11" fill="#e6edf3">2. Quanto tempo por dia?</text>
+      <rect y="56" width="262" height="22" rx="6" fill="#2a1416" stroke="#e5484d"/><text x="10" y="71" font-size="11" fill="#ff8a8e">… preço só depois de responder</text>
+    </g>
+    <text x="147" y="168" font-size="10" fill="#8b98a5" text-anchor="middle">quiz que termina em e-mail = captura, não preencher</text>
+  </g>
+  <line x1="830" y1="210" x2="870" y2="210" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+
+  <!-- descarte -->
+  <g transform="translate(36 330)">
+    <rect width="1128" height="60" rx="12" fill="#0f1216" stroke="#30363d"/>
+    <text x="18" y="24" font-size="11" font-weight="700" fill="#ff8a8e">DESCARTAR SEM ABRIR</text>
+    <text x="18" y="44" font-size="11" fill="#c9d1d9">micronovela (w2a. · fb. · drama. · novel · reel) · app (play.google · itunes · "Apps Ltd") · físico ("frete grátis") · doação/ONG · marca-pessoa ou Página ≥ 10 mil (registrar, não promover) · sufixo "with &lt;Marca&gt;" (influenciador, não persona)</text>
+  </g>
+</svg>

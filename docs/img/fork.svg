@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8b98a5"/></marker>
+    <marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#3fb950"/></marker>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="#0b0d10"/>
+  <text x="36" y="44" font-size="20" font-weight="800" fill="#e6edf3">O FORK · a base do operador chega por baixo, a sua cresce por cima</text>
+  <text x="36" y="66" font-size="12" fill="#8b98a5">git pull traz base/ nova e nunca toca em meu/. Em conflito, meu/ vence, com a divergência datada.</text>
+
+  <!-- operador -->
+  <g transform="translate(36 100)">
+    <rect width="300" height="160" rx="14" fill="#14181d" stroke="#30363d"/>
+    <text x="20" y="28" font-size="11" font-weight="700" fill="#8b98a5" letter-spacing="1">OPERADOR</text>
+    <text x="20" y="58" font-size="12" fill="#e6edf3">CRITERIOS.md · README.md</text>
+    <text x="20" y="78" font-size="12" fill="#e6edf3">METRICAS.md · GOAL-*.md</text>
+    <text x="20" y="108" font-size="11" fill="#8b98a5">24 rodadas, 21 lições datadas,</text>
+    <text x="20" y="124" font-size="11" fill="#8b98a5">regra primordial, assinaturas</text>
+    <text x="20" y="148" font-size="10" fill="#4b5563">as rodadas e as ofertas mapeadas dele ficam com ele</text>
+  </g>
+
+  <path d="M336 180 C 380 180, 380 150, 430 150" fill="none" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#a)"/>
+  <text x="383" y="140" font-size="10" fill="#8b98a5" text-anchor="middle">git pull</text>
+
+  <!-- sua pasta -->
+  <g transform="translate(430 100)">
+    <rect width="420" height="160" rx="14" fill="#11151a" stroke="#232a32"/>
+    <text x="20" y="28" font-size="11" font-weight="700" fill="#8b98a5" letter-spacing="1">SUA PASTA</text>
+    <g transform="translate(20 42)">
+      <rect width="180" height="100" rx="10" fill="#14181d" stroke="#30363d"/>
+      <text x="14" y="24" font-size="13" font-weight="800" fill="#c9d1d9">base/</text>
+      <text x="14" y="46" font-size="11" fill="#8b98a5">só leitura</text>
+      <text x="14" y="64" font-size="11" fill="#8b98a5">atualiza sozinha</text>
+      <text x="14" y="86" font-size="10" fill="#4b5563">sobrescrita a cada pull</text>
+    </g>
+    <g transform="translate(220 42)">
+      <rect width="180" height="100" rx="10" fill="#14181d" stroke="#3fb950"/>
+      <text x="14" y="24" font-size="13" font-weight="800" fill="#7ee787">meu/</text>
+      <text x="14" y="46" font-size="11" fill="#c9d1d9">goals · CRITERIOS-meu</text>
+      <text x="14" y="64" font-size="11" fill="#c9d1d9">rodadas · avaliações · série</text>
+      <text x="14" y="86" font-size="10" fill="#7ee787">nunca tocado · vence em conflito</text>
+    </g>
+  </g>
+
+  <path d="M850 180 C 890 180, 890 150, 930 150" fill="none" stroke="#3fb950" stroke-width="1.5" marker-end="url(#g)"/>
+  <text x="890" y="140" font-size="10" fill="#7ee787" text-anchor="middle">cada rodada</text>
+
+  <!-- evolução -->
+  <g transform="translate(930 100)">
+    <rect width="234" height="160" rx="14" fill="#14181d" stroke="#3fb950"/>
+    <text x="20" y="28" font-size="11" font-weight="700" fill="#7ee787" letter-spacing="1">COMO A SUA EVOLUI</text>
+    <text x="20" y="58" font-size="11" fill="#c9d1d9">1 exemplo → hipótese</text>
+    <text x="20" y="78" font-size="11" fill="#c9d1d9">repete → preferência</text>
+    <text x="20" y="98" font-size="11" fill="#c9d1d9">refutou → sai, não fica</text>
+    <text x="20" y="122" font-size="11" fill="#c9d1d9">o veredito é seu, com as suas</text>
+    <text x="20" y="138" font-size="11" fill="#c9d1d9">palavras; motivo não dito = null</text>
+  </g>
+</svg>

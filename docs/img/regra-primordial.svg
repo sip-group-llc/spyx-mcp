@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8b98a5"/></marker>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e5484d" stop-opacity=".0"/><stop offset="1" stop-color="#e5484d" stop-opacity=".25"/></linearGradient>
+  </defs>
+  <rect width="1200" height="400" rx="16" fill="#0b0d10"/>
+
+  <text x="36" y="44" font-size="20" font-weight="800" fill="#e6edf3">REGRA PRIMORDIAL · escala é o que sobrevive à repetição da medida</text>
+  <text x="36" y="66" font-size="12" fill="#8b98a5">contagem tirada uma vez é inventário. Só vira indício de escala com duas leituras separadas no tempo, mesmo método, status conferido.</text>
+
+  <!-- linha do tempo -->
+  <g transform="translate(36 96)">
+    <rect width="560" height="280" rx="14" fill="#14181d" stroke="#232a32"/>
+    <text x="20" y="28" font-size="11" font-weight="700" fill="#8b98a5" letter-spacing="1">A MESMA BUSCA, LIDA DE NOVO</text>
+    <line x1="60" y1="220" x2="530" y2="220" stroke="#30363d"/>
+    <line x1="60" y1="60" x2="60" y2="220" stroke="#30363d"/>
+    <!-- barras -->
+    <g>
+      <rect x="110" y="118" width="54" height="102" rx="4" fill="#d29922" opacity=".85"/>
+      <text x="137" y="108" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="middle">598</text>
+      <text x="137" y="240" font-size="11" fill="#8b98a5" text-anchor="middle">D+0</text>
+      <text x="137" y="256" font-size="10" fill="#d29922" text-anchor="middle">inventário</text>
+
+      <rect x="250" y="112" width="54" height="108" rx="4" fill="#3fb950" opacity=".85"/>
+      <text x="277" y="102" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="middle">611</text>
+      <text x="277" y="240" font-size="11" fill="#8b98a5" text-anchor="middle">D+1 · ≥ 24 h</text>
+      <text x="277" y="256" font-size="10" fill="#7ee787" text-anchor="middle">indícios de escala</text>
+
+      <rect x="390" y="100" width="54" height="120" rx="4" fill="#3fb950"/>
+      <text x="417" y="90" font-size="12" font-weight="700" fill="#e6edf3" text-anchor="middle">634</text>
+      <text x="417" y="240" font-size="11" fill="#8b98a5" text-anchor="middle">D+3</text>
+      <text x="417" y="256" font-size="10" fill="#7ee787" text-anchor="middle">direção: sobe</text>
+    </g>
+    <path d="M164 150 C 200 140, 215 140, 250 150" fill="none" stroke="#8b98a5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+    <text x="207" y="132" font-size="10" fill="#8b98a5" text-anchor="middle">+2,2%</text>
+    <path d="M304 140 C 340 130, 355 130, 390 138" fill="none" stroke="#8b98a5" stroke-dasharray="4 3" marker-end="url(#a)"/>
+    <text x="347" y="122" font-size="10" fill="#8b98a5" text-anchor="middle">+3,8%</text>
+    <text x="300" y="52" font-size="11" fill="#c9d1d9" text-anchor="middle">IDs ativos no destino · mesmo método · mesma fonte</text>
+  </g>
+
+  <!-- quatro eixos -->
+  <g transform="translate(620 96)" font-size="11">
+    <rect width="544" height="280" rx="14" fill="#14181d" stroke="#232a32"/>
+    <text x="20" y="28" font-size="11" font-weight="700" fill="#8b98a5" letter-spacing="1">OS QUATRO EIXOS · o que cada um prova sozinho</text>
+
+    <g transform="translate(20 44)">
+      <rect width="246" height="100" rx="10" fill="#0f1216" stroke="#d29922"/>
+      <text x="14" y="22" font-size="13" font-weight="800" fill="#e6edf3">Inventário</text>
+      <text x="14" y="42" fill="#c9d1d9">IDs ativos distintos, com destino extraído</text>
+      <text x="14" y="62" fill="#7ee787">prova: tamanho naquela leitura</text>
+      <text x="14" y="80" fill="#ff8a8e">não prova: gasto, alcance, venda</text>
+    </g>
+    <g transform="translate(278 44)">
+      <rect width="246" height="100" rx="10" fill="#0f1216" stroke="#3fb950"/>
+      <text x="14" y="22" font-size="13" font-weight="800" fill="#e6edf3">Atribuição</text>
+      <text x="14" y="42" fill="#c9d1d9">IDs no funil da oferta / total (598/598)</text>
+      <text x="14" y="62" fill="#7ee787">prova: é UMA oferta só — 1 leitura basta</text>
+      <text x="14" y="80" fill="#ff8a8e">não prova: tamanho</text>
+    </g>
+    <g transform="translate(20 156)">
+      <rect width="246" height="100" rx="10" fill="#0f1216" stroke="#2f81f7"/>
+      <text x="14" y="22" font-size="13" font-weight="800" fill="#e6edf3">Persistência</text>
+      <text x="14" y="42" fill="#c9d1d9">mais antigo, mediana, &gt; 30 d, &gt; 90 d</text>
+      <text x="14" y="62" fill="#7ee787">prova: alguém segue pagando</text>
+      <text x="14" y="80" fill="#ff8a8e">não prova: quanto se paga</text>
+    </g>
+    <g transform="translate(278 156)">
+      <rect width="246" height="100" rx="10" fill="#0f1216" stroke="#e5484d"/>
+      <text x="14" y="22" font-size="13" font-weight="800" fill="#e6edf3">Repetição</text>
+      <text x="14" y="42" fill="#c9d1d9">≥ 2 leituras, ≥ 24 h, mesmo método</text>
+      <text x="14" y="62" fill="#7ee787">prova: inventário real, estável, e a direção</text>
+      <text x="14" y="80" fill="#ff8a8e">não prova: valor absoluto de gasto</text>
+    </g>
+    <text x="272" y="272" font-size="11" fill="#8b98a5" text-anchor="middle">tamanho só com repetição · atribuição e persistência valem com uma leitura</text>
+  </g>
+</svg>

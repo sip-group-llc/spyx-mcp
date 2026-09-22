@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <rect width="1200" height="300" rx="16" fill="#0b0d10"/>
+  <text x="36" y="44" font-size="20" font-weight="800" fill="#e6edf3">LEITURA BLOQUEADA NÃO É CONTAGEM</text>
+  <text x="36" y="66" font-size="12" fill="#8b98a5">a mesma busca devolveu 28 ou 598 IDs conforme o encanamento de quem mede. Número que muda com o medidor não é propriedade da oferta.</text>
+
+  <!-- leitura A -->
+  <g transform="translate(36 96)">
+    <rect width="340" height="170" rx="14" fill="#14181d" stroke="#e5484d"/>
+    <text x="20" y="30" font-size="11" font-weight="700" fill="#ff8a8e" letter-spacing="1">LEITURA TRAVADA</text>
+    <text x="170" y="86" font-size="44" font-weight="800" fill="#e6edf3" text-anchor="middle">28</text>
+    <text x="170" y="112" font-size="11" fill="#8b98a5" text-anchor="middle">cabeçalho vazio · 3 rodadas sem ID novo</text>
+    <rect x="20" y="128" width="300" height="26" rx="8" fill="#2a1416"/>
+    <text x="170" y="145" font-size="11" font-weight="700" fill="#ff8a8e" text-anchor="middle">bloqueada = true → não entra na série</text>
+  </g>
+
+  <text x="420" y="190" font-size="30" fill="#8b98a5" text-anchor="middle">≠</text>
+
+  <!-- leitura B -->
+  <g transform="translate(464 96)">
+    <rect width="340" height="170" rx="14" fill="#14181d" stroke="#3fb950"/>
+    <text x="20" y="30" font-size="11" font-weight="700" fill="#7ee787" letter-spacing="1">LEITURA COMPLETA</text>
+    <text x="170" y="86" font-size="44" font-weight="800" fill="#e6edf3" text-anchor="middle">598</text>
+    <text x="170" y="112" font-size="11" fill="#8b98a5" text-anchor="middle">cabeçalho 3.600 · platô após 8 rodadas sem ID novo</text>
+    <rect x="20" y="128" width="300" height="26" rx="8" fill="#132118"/>
+    <text x="170" y="145" font-size="11" font-weight="700" fill="#7ee787" text-anchor="middle">status conferido → vira leitura D+0</text>
+  </g>
+
+  <!-- regra -->
+  <g transform="translate(848 96)" font-size="11">
+    <rect width="316" height="170" rx="14" fill="#0f1216" stroke="#30363d"/>
+    <text x="20" y="30" font-size="11" font-weight="700" fill="#8b98a5" letter-spacing="1">O QUE ISSO OBRIGA</text>
+    <text x="20" y="60" fill="#c9d1d9">• platô só depois de N rodadas sem ID novo,</text>
+    <text x="20" y="76" fill="#c9d1d9">  com o cabeçalho sempre ao lado</text>
+    <text x="20" y="100" fill="#c9d1d9">• `bloqueada=true` encerra o país por horas</text>
+    <text x="20" y="116" fill="#c9d1d9">  e vira lacuna registrada, nunca "0 anúncios"</text>
+    <text x="20" y="140" fill="#c9d1d9">• zero se confere contra o status,</text>
+    <text x="20" y="156" fill="#c9d1d9">  não contra a página desenhada</text>
+  </g>
+</svg>
