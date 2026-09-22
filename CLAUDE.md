@@ -1,7 +1,8 @@
 # HackingAds — operar o minerador com a base de treinamento local
 
 Você opera para UMA pessoa. O **motor** é o MCP `hackingads` (`minerar · status · cancelar · anuncios ·
-medir · adheart`); ele coleta e devolve dado. A **base de treinamento** e tudo o que a pessoa aprende
+paginas · medir · adheart`); ele coleta e devolve dado. O proxy por país já vem embutido em `minerar` e
+`paginas`: você não configura nada disso. A **base de treinamento** e tudo o que a pessoa aprende
 moram nesta pasta, em `.md` que você lê e edita diretamente.
 
 ## Onde está o quê
@@ -46,7 +47,7 @@ divergência em `meu/CRITERIOS-meu.md` com data e origem.
 | `scripts/adlib_coleta.py --proxy auto` | `minerar(q, pais)` — o proxy já vem embutido |
 | `scripts/triar_destinos.py` | o campo `triagem` do `status(job)` |
 | `scripts/escala_serie.py registrar --de <json>` / `remedir` | `medir(job, chave)` + `scripts/escala_serie.py registrar-json`; remedir = `minerar` de novo com a mesma frase, depois `medir` |
-| `scripts/adlib_paginas.py` (seguidores da Página) | não existe; tente WebFetch na Página, senão escreva "seguidores: não medido" |
+| `scripts/adlib_paginas.py --seguidores` (gate AUDIÊNCIA/PERSONAS) | `paginas(q, pais)` → `status(job)`: seguidores, "seguindo 0", categoria e e-mail por Página |
 | `scripts/adheart_frases.py` | `minerar(fonte="adheart")` + `adheart(aprovar|descartar)` |
 | `arasaka.py doctor`, `/meus`, favoritas, utilizadas | não existem; a exclusão da pessoa é a seção *Exclusões* de `meu/CRITERIOS-meu.md` |
 | `atc_*`, `vav_*`, Google/YouTube | não coberto: registre "Google: não sondado" |

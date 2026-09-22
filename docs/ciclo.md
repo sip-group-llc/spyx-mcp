@@ -26,7 +26,9 @@ avisa se a sessão travou; `cancelar(job)` interrompe.
 ## 3. Revisar
 
 Abrir a landing **antes** de contar por marca. Fora: app, SaaS, serviço, corretora, vaga, físico,
-micronovela. Com o bruto de `anuncios`: Páginas-persona por destino, copy, atribuição.
+micronovela. Com o bruto de `anuncios`: Páginas-persona por destino, copy, atribuição. Com
+`paginas(q, pais)`: seguidores e categoria de cada Página (persona = 1–350 seguidores, "seguindo 0";
+≥ 10 mil = marca, registrar sem promover).
 
 ## 4. Ouvir
 

@@ -8,6 +8,10 @@ Gerado de `mcp_minerador.py` por `gerar_docs.py` — não edite à mão.
 
 Coleta anúncios NO AR agora. `fonte="meta"`: Biblioteca de Anúncios (q = frase; rola até o platô no país pedido; devolve `job` — acompanhe com status(job), leva 2–10 min). Uma coleta Meta por vez: se houver outra, a sua espera na fila. `fonte="adheart"`: busca por termo (q = termos separados por vírgula, pais = br/de/us…; GASTA COTA, então poucos termos e páginas fundas); devolve staging_id — nada entra no acervo até adheart(acao="aprovar").
 
+## `paginas(q: string, pais?: string)`
+
+O gate AUDIÊNCIA/PERSONAS: abre o perfil de cada Página que anuncia na busca `q` no país e devolve seguidores, "seguindo 0", categoria e e-mail — por Página. Job em segundo plano (1–5 min, entra na mesma fila da Meta): acompanhe com status(job). Persona = 1–350 seguidores, "Blog pessoal"; Página ≥ 10 mil = marca, registrar sem promover.
+
 ## `cancelar(job: string)`
 
 Interrompe um job de minerar() que ainda está rodando (por exemplo, preso em tentativas com 0 IDs). O que já foi coletado não é aproveitado; o job vira `cancelado`.
