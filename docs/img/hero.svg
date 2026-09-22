@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 440" width="1200" height="440" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d10"/><stop offset="1" stop-color="#151a21"/>
+    </linearGradient>
+    <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e5484d"/><stop offset="1" stop-color="#7c1d21"/></linearGradient>
+    <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2f81f7"/><stop offset="1" stop-color="#173a6b"/></linearGradient>
+    <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3fb950"/><stop offset="1" stop-color="#1b5e2a"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#1f262e" stroke-width="1"/>
+    </pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+
+  <rect width="1200" height="440" fill="url(#bg)"/>
+  <rect width="1200" height="440" fill="url(#grid)" opacity=".55"/>
+  <circle cx="1040" cy="60" r="180" fill="#e5484d" opacity=".07" filter="url(#glow)"/>
+
+  <!-- título -->
+  <text x="48" y="74" font-size="34" font-weight="800" fill="#e6edf3" letter-spacing="-.5">HackingAds MCP</text>
+  <text x="48" y="104" font-size="15" fill="#8b98a5">anúncios NO AR agora · minerados pelo seu Claude · critério que sobrevive à repetição da medida</text>
+
+  <!-- CARD 1 -->
+  <g transform="translate(48 132)">
+    <rect width="300" height="268" rx="14" fill="#14181d" stroke="#232a32"/>
+    <rect x="14" y="14" width="272" height="118" rx="10" fill="url(#c1)"/>
+    <text x="30" y="58" font-size="22" font-weight="800" fill="#fff">Mach den Test →</text>
+    <text x="30" y="82" font-size="12" fill="#ffd9da">finde heraus, ob passives Einkommen</text>
+    <text x="30" y="98" font-size="12" fill="#ffd9da">zu dir passt · personalisierter Plan</text>
+    <rect x="14" y="146" width="66" height="20" rx="10" fill="#2a1416" stroke="#e5484d"/>
+    <text x="47" y="160" font-size="11" font-weight="700" fill="#ff8a8e" text-anchor="middle">QUIZ</text>
+    <rect x="86" y="146" width="84" height="20" rx="10" fill="#132118" stroke="#3fb950"/>
+    <text x="128" y="160" font-size="11" font-weight="700" fill="#7ee787" text-anchor="middle">PERSONA</text>
+    <rect x="176" y="146" width="110" height="20" rx="10" fill="#1a1f26" stroke="#30363d"/>
+    <text x="231" y="160" font-size="11" font-weight="700" fill="#c9d1d9" text-anchor="middle">598 IDs · 5 Páginas</text>
+    <text x="14" y="192" font-size="12" fill="#8b98a5">Página</text>
+    <text x="80" y="192" font-size="12" fill="#e6edf3">Lena K. · Blog pessoal · 31 seguidores</text>
+    <text x="14" y="214" font-size="12" fill="#8b98a5">Destino</text>
+    <text x="80" y="214" font-size="12" fill="#e6edf3">quiz.exemplo.de · 598/598 atribuição</text>
+    <text x="14" y="236" font-size="12" fill="#8b98a5">Vivo há</text>
+    <text x="80" y="236" font-size="12" fill="#e6edf3">55 d · mediana 23 d · 199 acima de 30 d</text>
+    <text x="14" y="256" font-size="11" fill="#3fb950">● leitura 2 · +2,2% em 24 h · indícios de escala</text>
+  </g>
+
+  <!-- CARD 2 -->
+  <g transform="translate(372 132)">
+    <rect width="300" height="268" rx="14" fill="#14181d" stroke="#232a32"/>
+    <rect x="14" y="14" width="272" height="118" rx="10" fill="url(#c2)"/>
+    <text x="30" y="58" font-size="22" font-weight="800" fill="#fff">Haz el test →</text>
+    <text x="30" y="82" font-size="12" fill="#d5e5ff">plan personalizado de ingresos extra</text>
+    <text x="30" y="98" font-size="12" fill="#d5e5ff">tengo 52 años, era enfermera…</text>
+    <rect x="14" y="146" width="66" height="20" rx="10" fill="#2a1416" stroke="#e5484d"/>
+    <text x="47" y="160" font-size="11" font-weight="700" fill="#ff8a8e" text-anchor="middle">QUIZ</text>
+    <rect x="86" y="146" width="84" height="20" rx="10" fill="#132118" stroke="#3fb950"/>
+    <text x="128" y="160" font-size="11" font-weight="700" fill="#7ee787" text-anchor="middle">PERSONA</text>
+    <rect x="176" y="146" width="110" height="20" rx="10" fill="#1a1f26" stroke="#30363d"/>
+    <text x="231" y="160" font-size="11" font-weight="700" fill="#c9d1d9" text-anchor="middle">541 IDs · 8 Páginas</text>
+    <text x="14" y="192" font-size="12" fill="#8b98a5">Página</text>
+    <text x="80" y="192" font-size="12" fill="#e6edf3">Carmen R. · Seguindo 0 · 118 seguidores</text>
+    <text x="14" y="214" font-size="12" fill="#8b98a5">Destino</text>
+    <text x="80" y="214" font-size="12" fill="#e6edf3">quiz.exemplo.es · preço só após o teste</text>
+    <text x="14" y="236" font-size="12" fill="#8b98a5">Vivo há</text>
+    <text x="80" y="236" font-size="12" fill="#e6edf3">41 d · mediana 12 d · 96 acima de 30 d</text>
+    <text x="14" y="256" font-size="11" fill="#d29922">● leitura 1 · inventário · pendente de 2ª leitura</text>
+  </g>
+
+  <!-- CARD 3 (descartado pelo gate) -->
+  <g transform="translate(696 132)" opacity=".85">
+    <rect width="300" height="268" rx="14" fill="#14181d" stroke="#232a32"/>
+    <rect x="14" y="14" width="272" height="118" rx="10" fill="url(#c3)"/>
+    <text x="30" y="58" font-size="22" font-weight="800" fill="#fff">Ganhe renda extra</text>
+    <text x="30" y="82" font-size="12" fill="#d8f5dd">baixe o app e comece hoje</text>
+    <text x="30" y="98" font-size="12" fill="#d8f5dd">323 IDs ativos · 3 Páginas</text>
+    <rect x="14" y="146" width="150" height="20" rx="10" fill="#1a1f26" stroke="#30363d"/>
+    <text x="89" y="160" font-size="11" font-weight="700" fill="#c9d1d9" text-anchor="middle">APP · play.google</text>
+    <line x1="14" y1="192" x2="286" y2="192" stroke="#e5484d" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="150" y="220" font-size="13" font-weight="700" fill="#ff8a8e" text-anchor="middle">DESCARTADO ANTES DA CONTAGEM</text>
+    <text x="150" y="240" font-size="11" fill="#8b98a5" text-anchor="middle">entregável = app, não oferta</text>
+    <text x="150" y="256" font-size="11" fill="#8b98a5" text-anchor="middle">a landing foi aberta antes de contar</text>
+  </g>
+
+  <!-- painel série -->
+  <g transform="translate(1020 132)">
+    <rect width="132" height="268" rx="14" fill="#0f1216" stroke="#232a32"/>
+    <text x="66" y="26" font-size="11" font-weight="700" fill="#8b98a5" text-anchor="middle">SÉRIE · quiz.exemplo.de</text>
+    <g fill="#e5484d">
+      <rect x="22" y="150" width="20" height="90" rx="3" opacity=".55"/>
+      <rect x="56" y="146" width="20" height="94" rx="3" opacity=".75"/>
+      <rect x="90" y="140" width="20" height="100" rx="3"/>
+    </g>
+    <text x="32" y="140" font-size="10" fill="#c9d1d9" text-anchor="middle">598</text>
+    <text x="66" y="136" font-size="10" fill="#c9d1d9" text-anchor="middle">611</text>
+    <text x="100" y="130" font-size="10" fill="#c9d1d9" text-anchor="middle">634</text>
+    <text x="32" y="254" font-size="10" fill="#8b98a5" text-anchor="middle">D+0</text>
+    <text x="66" y="254" font-size="10" fill="#8b98a5" text-anchor="middle">D+1</text>
+    <text x="100" y="254" font-size="10" fill="#8b98a5" text-anchor="middle">D+3</text>
+    <text x="66" y="60" font-size="10" fill="#8b98a5" text-anchor="middle">contagem única</text>
+    <text x="66" y="74" font-size="10" fill="#8b98a5" text-anchor="middle">= inventário</text>
+    <text x="66" y="96" font-size="10" fill="#7ee787" text-anchor="middle">2+ leituras ≥ 24 h</text>
+    <text x="66" y="110" font-size="10" fill="#7ee787" text-anchor="middle">= indícios de escala</text>
+  </g>
+
+  <text x="1152" y="426" font-size="10" fill="#4b5563" text-anchor="end">dados ilustrativos no formato real das tools · nomes e domínios fictícios</text>
+</svg>

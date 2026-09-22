@@ -1,5 +1,7 @@
 # HackingAds MCP
 
+<p align="center"><img src="docs/img/hero.svg" alt="anúncios minerados: quiz com persona, atribuição, série de escala" width="100%"></p>
+
 Inteligência de anúncios **no ar agora**, operada pelo seu Claude, com uma base de critério já calibrada
 que você leva pra sua máquina e refina do seu jeito.
 
@@ -12,6 +14,8 @@ Duas peças:
 
 Você clona, cola a chave, abre o Claude Code na pasta e opera em conversa. Sua base evolui com você;
 a do operador chega por `git pull`, sem apagar a sua.
+
+<p align="center"><img src="docs/img/ciclo.svg" alt="sua máquina: meu/ + base/ + o seu Claude + escala_serie · motor remoto: minerar, paginas, status, anuncios, medir" width="100%"></p>
 
 ## Comece
 

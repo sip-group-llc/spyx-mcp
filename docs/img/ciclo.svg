@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#8b98a5"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="300" rx="16" fill="#0b0d10"/>
+
+  <!-- faixa: sua máquina -->
+  <rect x="24" y="24" width="700" height="252" rx="14" fill="#11151a" stroke="#232a32"/>
+  <text x="44" y="52" font-size="12" font-weight="700" fill="#8b98a5" letter-spacing="1">SUA MÁQUINA · Claude Code na pasta</text>
+
+  <g transform="translate(44 72)">
+    <rect width="190" height="80" rx="10" fill="#14181d" stroke="#3fb950"/>
+    <text x="14" y="26" font-size="13" font-weight="700" fill="#7ee787">meu/</text>
+    <text x="14" y="46" font-size="11" fill="#c9d1d9">goals · CRITERIOS-meu</text>
+    <text x="14" y="62" font-size="11" fill="#c9d1d9">rodadas · avaliações · série</text>
+  </g>
+  <g transform="translate(44 168)">
+    <rect width="190" height="80" rx="10" fill="#14181d" stroke="#30363d"/>
+    <text x="14" y="26" font-size="13" font-weight="700" fill="#c9d1d9">base/</text>
+    <text x="14" y="46" font-size="11" fill="#8b98a5">critério do operador</text>
+    <text x="14" y="62" font-size="11" fill="#8b98a5">git pull · só leitura</text>
+  </g>
+
+  <g transform="translate(270 100)">
+    <rect width="200" height="112" rx="10" fill="#14181d" stroke="#e5484d"/>
+    <text x="100" y="30" font-size="13" font-weight="800" fill="#ff8a8e" text-anchor="middle">o seu Claude</text>
+    <text x="100" y="52" font-size="11" fill="#c9d1d9" text-anchor="middle">lê CLAUDE.md · declara hipótese</text>
+    <text x="100" y="70" font-size="11" fill="#c9d1d9" text-anchor="middle">abre a landing · conta personas</text>
+    <text x="100" y="88" font-size="11" fill="#c9d1d9" text-anchor="middle">edita os .md · escreve a rodada</text>
+  </g>
+
+  <line x1="234" y1="112" x2="270" y2="140" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="234" y1="208" x2="270" y2="176" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="270" y1="150" x2="234" y2="120" stroke="#3fb950" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <g transform="translate(506 100)">
+    <rect width="190" height="112" rx="10" fill="#14181d" stroke="#30363d"/>
+    <text x="95" y="28" font-size="12" font-weight="700" fill="#c9d1d9" text-anchor="middle">scripts/escala_serie.py</text>
+    <text x="95" y="52" font-size="11" fill="#8b98a5" text-anchor="middle">1 leitura = inventário</text>
+    <text x="95" y="70" font-size="11" fill="#8b98a5" text-anchor="middle">2 leituras ≥ 24 h =</text>
+    <text x="95" y="88" font-size="11" fill="#7ee787" text-anchor="middle">indícios de escala</text>
+  </g>
+  <line x1="470" y1="156" x2="506" y2="156" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- faixa: motor -->
+  <rect x="760" y="24" width="416" height="252" rx="14" fill="#11151a" stroke="#232a32"/>
+  <text x="780" y="52" font-size="12" font-weight="700" fill="#8b98a5" letter-spacing="1">MOTOR · MCP remoto · sua chave</text>
+
+  <g font-size="12" fill="#e6edf3">
+    <g transform="translate(780 72)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">minerar(q, pais)</text></g>
+    <g transform="translate(980 72)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">paginas(q, pais)</text></g>
+    <g transform="translate(780 118)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">status(job)</text></g>
+    <g transform="translate(980 118)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">anuncios(job)</text></g>
+    <g transform="translate(780 164)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">medir(job, chave)</text></g>
+    <g transform="translate(980 164)"><rect width="176" height="34" rx="8" fill="#1a1f26" stroke="#30363d"/><text x="12" y="22" font-family="ui-monospace, Consolas, monospace">cancelar · adheart</text></g>
+  </g>
+  <text x="968" y="236" font-size="11" fill="#8b98a5" text-anchor="middle">Meta Ad Library · AdHeart · uma coleta por vez · proxy e cota embutidos</text>
+  <text x="968" y="256" font-size="11" fill="#4b5563" text-anchor="middle">só nome, descrição e JSON das tools cruzam a fronteira</text>
+
+  <path d="M696 130 C 730 130, 730 90, 780 90" fill="none" stroke="#e5484d" stroke-width="1.5" marker-end="url(#arr)"/>
+  <path d="M780 135 C 740 135, 740 170, 696 170" fill="none" stroke="#8b98a5" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="738" y="80" font-size="10" fill="#ff8a8e" text-anchor="middle">busca</text>
+  <text x="738" y="192" font-size="10" fill="#8b98a5" text-anchor="middle">dado</text>
+</svg>
