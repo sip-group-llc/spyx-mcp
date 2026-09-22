@@ -22,7 +22,7 @@ a do operador chega por `git pull`, sem apagar a sua.
 Precisa de um Claude que edite arquivos locais: **Claude Code** (ou Claude Desktop com acesso à pasta).
 
 ```bash
-git clone https://github.com/SolarisSy/hackingads-mcp
+git clone https://github.com/sip-group-llc/hackingads-mcp
 cd hackingads-mcp
 ```
 
