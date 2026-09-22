@@ -15,12 +15,10 @@
       "Bash(git log *)",
       "Bash(git diff *)",
       "Read(./**)",
-      "Edit(./meu/**)",
-      "Write(./meu/**)"
+      "Edit(./meu/**)"
     ],
     "deny": [
-      "Edit(./base/**)",
-      "Write(./base/**)"
+      "Edit(./base/**)"
     ]
   }
 }

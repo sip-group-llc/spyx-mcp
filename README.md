@@ -32,7 +32,11 @@ Troque `<SUA_CHAVE>` no [`.mcp.json`](.mcp.json) pela sua chave e abra o Claude 
 claude
 ```
 
-Primeira conversa: **"leia meu/goals/GOAL-EXEMPLO.md e rode uma rodada em renda extra, região ES"**.
+Na primeira abertura o Claude Code pergunta se você confia na pasta: **aceite**, é isso que libera as tools
+do motor e o `.mcp.json` sem perguntar a cada passo.
+
+Primeira conversa: **"como eu uso isso?"** ou direto
+**"leia meu/goals/GOAL-EXEMPLO.md e rode uma rodada em renda extra, região ES"**.
 O `CLAUDE.md` já diz ao Claude o ciclo, onde ler, onde escrever e como traduzir a base pro motor.
 
 Sem chave? Abra uma issue [pedindo acesso](../../issues/new?template=acesso.md).

@@ -79,6 +79,13 @@ pacote e no motor (tools novas ou renomeadas).
 | `D:/Projetos/…`, `outputs/<sessão>/` | esta pasta e `meu/dados/` |
 | `OFERTAS-MAPEADAS.md`, rodadas R0xx do operador | não vêm no pacote; o que a pessoa mapeou fica em `meu/` |
 
+## Primeira sessão
+
+Se `.mcp.json` ainda tem `<SUA_CHAVE>`, ou uma tool do motor responder "chave inválida", pare e peça à
+pessoa a chave que o operador mandou: sem ela nada do motor funciona. Se `meu/` estiver vazio, explique
+o ciclo em poucas linhas e peça o alvo (nicho, região, padrão); crie o goal a partir de
+`meu/goals/GOAL-EXEMPLO.md`.
+
 ## Regras
 
 - Nunca escreva em `base/`. Nunca invente avaliação. Número só com leitura, e "escala" só com a série.
