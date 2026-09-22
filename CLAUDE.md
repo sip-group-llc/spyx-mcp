@@ -48,10 +48,21 @@ pacote e no motor (tools novas ou renomeadas).
 1. **Preparar.** Ler `base/CRITERIOS.md` (REGRA PRIMORDIAL e ASSINATURAS primeiro), `meu/CRITERIOS-meu.md`
    inteiro, as 3 últimas `meu/rodadas/` e `meu/avaliacoes.jsonl`. Declarar hipótese, rede, país, frases
    e o que muda em relação à rodada anterior.
-2. **Minerar.** `minerar(q, pais)` → `status(job)` a cada ~2 min até `pronto`. Uma coleta por vez.
-   `bloqueada=true` **não é contagem**: encerre o país por ~12 h e registre a lacuna. Salve o resumo em
-   `meu/dados/<job>.json`. `anuncios(job, destino)` traz o bruto (id, início, Página, destino, copy): é com
-   ele que você conta Páginas-persona por destino, lê o funil e confere atribuição.
+2. **Minerar — descobrir primeiro, medir depois.** (Lição da R001 do primeiro fork, 22/09/2026: começar
+   por frase de funil na Meta devolveu 107 anúncios no país inteiro e a 2ª busca travou.)
+   - **Descobrir os mais escalados**: `minerar(fonte="adheart", q="<2–3 termos AMPLOS do nicho>", pais,
+     sort="total_reach")`. Vem ordenado por alcance, com amostra; é a única fonte que ranqueia. Gasta cota
+     por termo: poucos termos, páginas fundas.
+   - **Medir e atribuir na Meta**: `minerar(q, pais)` → `status(job)` a cada ~2 min até `pronto`. Ordem das
+     frases: **volume → assinatura → formato** (termo comum do nicho primeiro; frase de funil só para achar o
+     quiz que o termo comum não pega). **1 a 2 buscas por país e a Meta trava por ~12 h**: alterne o país a
+     cada busca e não repita país na mesma hora. Uma coleta por vez.
+   - `bloqueada=true` **não é contagem**: encerre o país por ~12 h e registre a lacuna. Salve o resumo em
+     `meu/dados/<job>.json`. `anuncios(job, destino)` traz o bruto (id, início, Página, destino, copy): é com
+     ele que você conta Páginas-persona por destino, lê o funil e confere atribuição.
+   - **Piso por mercado**: o "≥ 150 IDs" da base foi medido em DE/IT/ES. Num mercado novo, a 1ª rodada mede o
+     teto real (maior destino da busca de volume) e o goal da pessoa fixa o piso a partir dele; até lá,
+     candidato com a assinatura certa entra como inventário, não some.
 3. **Revisar.** Abrir a landing (WebFetch) **antes** de contar por marca. Fora: app, SaaS, serviço,
    corretora, vaga, físico, micronovela. Distinguir anúncio, página, domínio e oferta.
 4. **Ouvir.** A pessoa avalia ("R003-B ruim pelo produto"). Acrescente uma linha em `meu/avaliacoes.jsonl`:

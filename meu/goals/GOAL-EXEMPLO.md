@@ -11,10 +11,16 @@ própria. Rede única: Meta.
 **Antes de buscar:** `base/CRITERIOS.md` (REGRA PRIMORDIAL, ASSINATURAS), `meu/CRITERIOS-meu.md`, últimas
 3 rodadas. Declarar hipótese e o que muda.
 
-**Busca:** `minerar(q, pais)` com frases de FUNIL cruzadas com o nicho, no idioma do país, 8+ frases
-(<exemplos: "faça o teste", "plano personalizado", "descubra se" + termo do nicho>). Nunca termo de
-recrutamento/vaga. `bloqueada=true` não é contagem. Agrupar por destino; usar a `triagem` do `status`
-antes de contar por marca.
+**Busca — descobrir, depois medir:**
+1. `minerar(fonte="adheart", q="<2–3 termos amplos do nicho>", pais, sort="total_reach")`: os de maior
+   alcance, com amostra. É de onde saem os candidatos.
+2. Meta, na ordem **volume → assinatura → formato**: primeiro o termo que o nicho inteiro usa
+   (<ex.: "renda extra", "ganhar dinheiro online">), depois a assinatura pra separar, e só então frase de
+   FUNIL (<"faça o teste", "plano personalizado", "descubra se">) pra achar o quiz que o termo comum não pega.
+   Nunca termo de recrutamento/vaga. **Alterne o país a cada busca** (1–2 por país e a Meta trava ~12 h).
+   `bloqueada=true` não é contagem. Agrupar por destino; usar a `triagem` do `status` antes de contar por marca.
+3. **Piso**: <≥ N IDs no mesmo destino — na 1ª rodada de um mercado novo, deixe em branco e fixe a partir do
+   maior destino medido>.
 
 **Entregável antes da contagem:** abrir a landing. Fora: app, SaaS, serviço, corretora, vaga, físico,
 micronovela. Persona nova da mesma operação não é oferta nova.
