@@ -28,6 +28,10 @@ Lê rodadas anteriores. `de`: minhas (seu fork) · upstream (as do operador). Co
 
 Coleta anúncios NO AR agora. `fonte="meta"`: Biblioteca de Anúncios (q = frase; rola até o platô no país pedido; devolve `job` — acompanhe com status(job), leva 2–10 min). Uma coleta Meta por vez: se houver outra, a sua espera na fila. `fonte="adheart"`: busca por termo (q = termos separados por vírgula, pais = br/de/us…; GASTA COTA, então poucos termos e páginas fundas); devolve staging_id — nada entra no acervo até adheart(acao="aprovar").
 
+## `cancelar(job: string)`
+
+Interrompe um job de minerar() que ainda está rodando (por exemplo, preso em tentativas com 0 IDs). O que já foi coletado não é aproveitado; o job vira `cancelado`.
+
 ## `status(job: string)`
 
 Andamento ou resultado de um job de minerar(): rodando (últimas linhas) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do advertorial).
@@ -40,10 +44,14 @@ Fecha uma busca AdHeart: `aprovar` baixa o staging para o acervo (aí entra no r
 
 REGRA PRIMORDIAL. Com `job`: registra a leitura desse job para o destino `chave` (hostname) na SUA série e devolve o delta contra a anterior. Sem `job`: mostra a série e o veredito. 1 leitura = INVENTÁRIO ("escala: pendente de segunda leitura"); só ≥2 leituras separadas por ≥24 h, mesmo método, autorizam escrever "indícios de escala". Leitura bloqueada nunca vira medida.
 
+## `goal(nicho: string, regiao: string, padrao?: string, quantidade?: string)`
+
+O alvo da rodada, com o método já embutido: chame no INÍCIO de toda rodada e siga o texto devolvido como se fosse o pedido da pessoa. Só o alvo é seu (nicho, região, padrão, quantidade).
+
 # Prompt
 
 ## `goal(nicho, regiao, padrao?, quantidade?)`
 
-O /goal de uma rodada: o alvo é seu; o método já vem embutido.
+O /goal de uma rodada: o alvo é seu; o método já vem embutido. (Mesmo texto da tool `goal`.)
 
 No Claude Code aparece como `/mcp__hackingads__goal`; no claude.ai, como prompt do conector.

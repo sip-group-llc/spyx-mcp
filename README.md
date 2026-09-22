@@ -28,13 +28,22 @@ Sem chave? Abra uma issue [pedindo acesso](../../issues/new?template=acesso.md).
 
 ## Como se usa
 
-1. Chame o prompt `goal` com **nicho, região, padrão e quantidade**. O método já vem embutido; você só diz o alvo.
+1. Peça ao Claude: **"chame `goal` com nicho X, região Y"** (padrão e quantidade são opcionais). `goal` é uma
+   tool comum, então funciona em qualquer cliente; no Claude Code também existe como `/mcp__hackingads__goal`.
+   O método já vem embutido; você só diz o alvo.
 2. O Claude lê a base (`base`), as suas rodadas anteriores (`rodadas`) e declara a hipótese.
-3. Minera (`minerar` → `status`), abre as landings, agrupa por destino, mede (`escala`).
+3. Minera (`minerar` → `status` a cada ~2 min; `cancelar` se travar), abre as landings, agrupa por destino, mede (`escala`).
 4. Você dá o veredito por candidato; ele grava (`avaliar`) e anota o que aprendeu (`anotar`).
 5. Fecha a rodada (`rodada_salvar`). A próxima começa de onde essa parou.
 
 Detalhes: [o ciclo](docs/ciclo.md) · [as tools](docs/tools.md) · [uma rodada de exemplo](docs/rodada-exemplo.md)
+
+**O que o seu Claude precisa ter:** as tools deste conector e a capacidade de abrir páginas na web
+(no claude.ai já vem; no Claude Code, deixe `WebFetch` permitido). Sem isso o passo 3 (abrir a landing) não acontece.
+
+**Quanto tempo leva uma busca:** 2–10 min. Se a fonte travar a sessão, o coletor insiste com esperas
+crescentes por até ~15 min e então devolve `bloqueada=true` (que **não** é contagem). O `status` mostra os
+minutos decorridos e avisa quando é isso; `cancelar(job)` interrompe e você tenta outra frase ou país.
 
 ## A regra que governa tudo
 
