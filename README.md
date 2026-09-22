@@ -96,6 +96,13 @@ número.
 `base/` é do operador e atualiza sozinha. `meu/` é seu, nunca é tocado, e vence em conflito. Um exemplo
 vira hipótese; repetição vira preferência; o que foi refutado sai.
 
+## Uma rodada inteira, sem cutucar
+
+Uma rodada leva horas: várias buscas, esperas, medição. Peça a rodada ("minera renda extra no BR,
+traz os mais escalados") e o Claude te devolve **o texto pronto pra colar no `/goal`** do app, que segue
+até a rodada estar escrita em `meu/rodadas/`. Sem `/goal`, cada turno para no fim de um passo: aí é
+"continua" a cada vez, ou `/loop 5m <texto>` no terminal.
+
 ## Quanto tempo leva uma busca
 
 2–10 min. Se a fonte travar a sessão, o coletor insiste com esperas crescentes por até ~15 min e então

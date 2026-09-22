@@ -90,6 +90,25 @@ pacote e no motor (tools novas ou renomeadas).
 | `D:/Projetos/…`, `outputs/<sessão>/` | esta pasta e `meu/dados/` |
 | `OFERTAS-MAPEADAS.md`, rodadas R0xx do operador | não vêm no pacote; o que a pessoa mapeou fica em `meu/` |
 
+## Rodar até o fim: o texto do `/goal`
+
+Uma rodada inteira (descobrir → medir → revisar → série → relatório) leva horas e várias buscas com
+espera. Sem um modo de objetivo, cada turno seu termina no fim de um passo e a pessoa precisa te cutucar.
+Por isso, **quando a pessoa pedir uma rodada inteira ("minera X em Y", "traz os mais escalados de…"),
+antes de começar entregue o texto pronto pra ela colar no `/goal` do app** (≤ 4.000 caracteres, sem
+markdown pesado), montado a partir do goal em `meu/goals/`:
+
+- alvo (nicho, região, padrão, quantidade), a ordem descobrir (AdHeart por alcance) → medir (Meta,
+  volume → assinatura → formato, alternando país), o gate do entregável, a regra primordial, e o que
+  fechar (`meu/rodadas/Rnnn.md`, avaliações, série, refinar `meu/`);
+- a condição de parada explícita: "só pare quando a rodada estiver escrita em `meu/rodadas/` com os
+  candidatos medidos ou a lacuna registrada; `bloqueada` num país não encerra a rodada, alterna o país";
+- o que **não** é motivo pra parar: esperar `status` (chame de novo), fila, uma busca vazia.
+
+Se a pessoa já colou o `/goal`, execute sem parar entre passos: espera de coleta é `status` repetido,
+não fim de turno. Alternativas quando não há `/goal`: no Claude Code de terminal, `/loop 5m <mesmo
+texto>`; ou a pessoa manda "continua" e você retoma de `meu/rodadas/` e `meu/dados/`.
+
 ## Primeira sessão
 
 Se `.mcp.json` ainda tem `<SUA_CHAVE>`, ou uma tool do motor responder "chave inválida", pare e peça à

@@ -16,3 +16,4 @@
 - Primeira versão pública: 9 tools + prompt `goal`, fork de critério por pessoa, fontes Meta e AdHeart.
 - Regra primordial aplicada pela tool `escala`: uma leitura é inventário, nunca escala.
 - `minerar(fonte="adheart", sort="total_reach")`: descoberta dos mais escalados por alcance; CLAUDE.md com "descobrir → medir", volume → assinatura → formato, alternância de país e piso por mercado; seção BR no GOAL-RENDA-EXTRA (lições da R001 do 1º fork).
+- `CLAUDE.md` "Rodar até o fim": ao pedir uma rodada inteira, o Claude entrega o texto do `/goal` (≤ 4.000 chars) com condição de parada; alternativas `/loop` e "continua".
