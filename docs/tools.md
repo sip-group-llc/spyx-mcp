@@ -4,9 +4,9 @@ Gerado de `mcp_minerador.py` por `gerar_docs.py` — não edite à mão.
 
 `?` marca argumento opcional. Toda tool exige a sua chave no header `Authorization`.
 
-## `minerar(q: string, pais?: string, fonte?: string, search_type?: string, max_rodadas?: integer, nicho?: string, max_pages?: integer, last_active?: integer)`
+## `minerar(q: string, pais?: string, fonte?: string, search_type?: string, max_rodadas?: integer, nicho?: string, max_pages?: integer, last_active?: integer, sort?: string)`
 
-Coleta anúncios NO AR agora. `fonte="meta"`: Biblioteca de Anúncios (q = frase; rola até o platô no país pedido; devolve `job` — acompanhe com status(job), leva 2–10 min). Uma coleta Meta por vez: se houver outra, a sua espera na fila. `fonte="adheart"`: busca por termo (q = termos separados por vírgula, pais = br/de/us…; GASTA COTA, então poucos termos e páginas fundas); devolve staging_id — nada entra no acervo até adheart(acao="aprovar").
+Coleta anúncios NO AR agora. Duas fontes com papéis diferentes: `fonte="adheart"` = DESCOBRIR os mais escalados do nicho: busca por termo (q = termos amplos separados por vírgula, pais = br/de/us…), `sort="total_reach"` (alcance, o default) ou `"creation_date"` (recentes); GASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra no acervo até adheart(acao="aprovar"). `fonte="meta"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job` — status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por termo de volume, alterne país entre buscas.
 
 ## `paginas(q: string, pais?: string)`
 

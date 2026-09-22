@@ -226,3 +226,22 @@ Próxima rodada disponível, sem sobrescrever. Excel no padrão R003 — abas Co
 
 PARADA
 Só terminar com 3 novas qualificadas cobrindo as duas redes e registros persistidos, ou com bloqueio concreto documentado — tentativas, candidatos e evidência faltante. Busca vazia não encerra.
+
+---
+
+## Mercado BR — calibração inicial (22/09/2026, R001 do primeiro fork do pacote público)
+
+O que a primeira rodada de terceiro no Brasil mediu, para a próxima não pagar de novo:
+
+- **Frase de funil como porta de entrada não funciona no BR.** `faça o teste renda extra` (4 palavras no mesmo
+  anúncio) devolveu **107 IDs no país inteiro**, maior destino 51 (`split.vkdigital.com.br` → `rendacomcookie.com.br`,
+  "Método Cookie Lucrativo", quiz na porta, 58 d de vida). A ordem que vale é **volume → assinatura → formato**:
+  termos amplos primeiro (`renda extra`, `ganhar dinheiro online`, `trabalhar de casa`, `renda extra pela internet`),
+  assinatura para separar, frase de funil por último.
+- **"Renda extra" no BR puxa revenda física** (joias, decor, Boticário: `inlead.digital`, `floow.binahki.com.br`)
+  e lead-gen para WhatsApp. Descartar pelo entregável antes de contar; é o gate de sempre, só que mais frequente.
+- **Splitter como domínio do anúncio** (`split.vkdigital.com.br`) fatia o inventário da marca: somar splitter +
+  domínio real antes de comparar com o piso.
+- **1 a 2 buscas por país e a Meta trava** (2ª busca voltou 29 de 260, `bloqueada`). Alternar país entre buscas.
+- **Piso**: os 150 IDs são régua de DE/IT/ES. No BR o teto real ainda não foi medido com busca de volume; até
+  medir, candidato com a assinatura certa entra como inventário e não é descartado pelo número.
