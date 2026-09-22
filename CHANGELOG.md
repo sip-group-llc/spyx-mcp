@@ -13,3 +13,5 @@
 
 - Primeira versão pública: 9 tools + prompt `goal`, fork de critério por pessoa, fontes Meta e AdHeart.
 - Regra primordial aplicada pela tool `escala`: uma leitura é inventário, nunca escala.
+- `.claude/settings.json`: tools do motor, WebFetch e o script de série pré-aprovados; `base/` bloqueado para escrita.
+- `CLAUDE.md`: seção "A base, por dentro" e "Quando o operador atualizar a base".

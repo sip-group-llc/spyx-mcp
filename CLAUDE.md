@@ -16,6 +16,31 @@ moram nesta pasta, em `.md` que você lê e edita diretamente.
 Conflito entre `base/` e `meu/`: `meu/` vence, porque é a pessoa refinando o critério dela. Anote a
 divergência em `meu/CRITERIOS-meu.md` com data e origem.
 
+## A base, por dentro
+
+| Arquivo | O que é | Quando ler |
+|---|---|---|
+| `base/CRITERIOS.md` | o critério inteiro: **REGRA PRIMORDIAL** (topo, vence tudo), **ASSINATURAS** do advertorial agressivo, regra de navegação e planilha, preferências confirmadas, hipóteses e lições datadas com origem | as duas primeiras seções em toda rodada; o resto na primeira sessão e quando uma lição for citada |
+| `base/README.md` | o laboratório: o ciclo em 6 passos, contratos dos arquivos, índice das rodadas do operador (R001…) | primeira sessão; "Ciclo por prompt" em toda rodada |
+| `base/METRICAS.md` | campos obrigatórios de cada candidato e limites de interpretação (o que um número prova e o que não prova) | ao escrever a ficha de um candidato |
+| `base/GOAL-*.md` | goals do operador: `ADVERTORIAL` (o método-mãe), `RENDA-EXTRA`, `RELACIONAMENTO`. Cada um tem versão curta (o que se cola) e procedimento completo | ao criar ou refinar um goal em `meu/goals/` |
+| `meu/CRITERIOS-meu.md` | o que a pessoa aprendeu por cima da base; vence a base em conflito | inteiro, em toda rodada |
+
+A base é escrita em primeira pessoa pelo operador e cita rodadas dele (R017, R018…) que **não vêm no pacote**:
+trate a citação como evidência de método, não como arquivo a abrir.
+
+## Quando o operador atualizar a base
+
+`git pull` traz `base/` nova e nunca toca em `meu/`. Depois de um pull, antes da rodada:
+
+```bash
+git log --oneline -5 -- base/ && git diff HEAD~1 --stat -- base/
+```
+
+Leia o que mudou (em geral CRITERIOS ou um GOAL) e verifique se contradiz algo em `meu/CRITERIOS-meu.md`;
+se contradisser, `meu/` vence, e você registra a divergência com data. `CHANGELOG.md` diz o que mudou no
+pacote e no motor (tools novas ou renomeadas).
+
 ## O ciclo (é o de `base/README.md`, "Ciclo por prompt")
 
 0. **Alvo.** A pessoa aponta um goal em `meu/goals/` ou diz o alvo; nesse caso crie o arquivo a partir

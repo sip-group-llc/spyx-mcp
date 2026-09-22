@@ -1,0 +1,26 @@
+{
+  "enableAllProjectMcpServers": true,
+  "permissions": {
+    "allow": [
+      "mcp__hackingads__minerar",
+      "mcp__hackingads__paginas",
+      "mcp__hackingads__status",
+      "mcp__hackingads__cancelar",
+      "mcp__hackingads__anuncios",
+      "mcp__hackingads__medir",
+      "mcp__hackingads__adheart",
+      "WebFetch",
+      "Bash(python scripts/escala_serie.py *)",
+      "Bash(git pull)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Read(./**)",
+      "Edit(./meu/**)",
+      "Write(./meu/**)"
+    ],
+    "deny": [
+      "Edit(./base/**)",
+      "Write(./base/**)"
+    ]
+  }
+}
