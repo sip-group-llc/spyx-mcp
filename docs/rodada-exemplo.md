@@ -32,16 +32,24 @@ frases de funil, sem termo genérico.
 Remedir R002-A em D+1 com `escala("quiz.exemplo-a.com", job)`; testar as mesmas frases em PT.
 ```
 
-E o que você disse, gravado com `avaliar`:
+E o que você disse, gravado em `meu/avaliacoes.jsonl`:
 
 ```json
-{"rodada": "R002", "item": "A", "veredito": "boa", "motivo": "mecanismo do quiz"}
-{"rodada": "R002", "item": "C", "veredito": "ruim", "motivo": null}
+{"data": "2026-09-22T20:10:00+00:00", "rodada": "R002", "item": "A", "veredito": "boa", "motivo": "mecanismo do quiz"}
+{"data": "2026-09-22T20:10:00+00:00", "rodada": "R002", "item": "C", "veredito": "ruim", "motivo": null}
 ```
 
-E o que virou aprendizado, com `anotar`:
+E o que virou aprendizado, editado em `meu/CRITERIOS-meu.md`:
 
 ```
-## hipotese · 2026-09-22 · R002-A
-Em ES, quiz com preço escondido até o fim do teste aparece mais em "haz el test" do que em "plan personalizado".
+## Hipóteses
+- 2026-09-22 · R002-A: em ES, quiz com preço escondido até o fim do teste aparece mais em "haz el test"
+  do que em "plan personalizado". Vira preferência se repetir na R003.
+```
+
+E a leitura D+0, em `meu/serie-escala.jsonl` via `medir` + `scripts/escala_serie.py registrar-json`:
+
+```
+quiz.exemplo-a.com · 2026-09-22 · 23 IDs no destino
+  LEITURA 1 — isto e INVENTARIO, nao escala. A ficha declara 'escala: pendente de segunda leitura'.
 ```
