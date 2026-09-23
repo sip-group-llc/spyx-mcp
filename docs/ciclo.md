@@ -5,7 +5,7 @@ Motor = tools do MCP. Memória = arquivos em `meu/`.
 
 ## 0. Alvo
 
-Um arquivo em `meu/goals/` (comece por `GOAL-EXEMPLO.md`). Nicho, região, padrão, quantidade. O método
+Um arquivo em `meu/goals/` (comece por `GOAL-EXEMPLO.md`). Nicho, região, **rede**, padrão, quantidade. O método
 (frases por idioma, exclusões, gate de escala) já está na base; você refina o seu goal quando quiser,
 editando o `.md`.
 
@@ -17,9 +17,14 @@ rodada anterior.
 
 ## 2. Minerar
 
-`minerar(q, pais)` → `status(job)` até `pronto` → `anuncios(job, destino)` pro dado bruto.
+**Meta:** `minerar(fonte="adheart", ...)` para descobrir; `minerar(q, pais)` → `status(job)` até `pronto`
+→ `anuncios(job, destino)` para o bruto.
 
-Frases de funil cruzadas com o nicho, no idioma do país. Uma coleta por vez. `bloqueada=true` **não é
+**Google/YouTube:** `google(modo="descobrir", ...)` → `status(job)` → `google_resultados(job)`;
+`google(modo="dominio", q="<host>", pais)` para sondar a oferta. Com `video_id` ligado ao criativo,
+`youtube_video(ids)` mede views, data, não listado e canal. Salve a leitura em `meu/dados/`.
+
+Termos do nicho no idioma do país. Uma coleta por fonte por vez. Na Meta, `bloqueada=true` **não é
 contagem**: país encerrado por algumas horas, lacuna registrada. Enquanto roda, `status` mostra minutos e
 avisa se a sessão travou; `cancelar(job)` interrompe.
 
@@ -28,7 +33,8 @@ avisa se a sessão travou; `cancelar(job)` interrompe.
 Abrir a landing **antes** de contar por marca. Fora: app, SaaS, serviço, corretora, vaga, físico,
 micronovela. Com o bruto de `anuncios`: Páginas-persona por destino, copy, atribuição. Com
 `paginas(q, pais)`: seguidores e categoria de cada Página (persona = 1–350 seguidores, "seguindo 0";
-≥ 10 mil = marca, registrar sem promover).
+≥ 10 mil = marca, registrar sem promover). No YouTube, confirme o elo anúncio → vídeo → destino e
+verifique canal, produtor e entregável; vídeo listado pode acumular views orgânicas.
 
 ## 4. Ouvir
 
@@ -42,7 +48,9 @@ reescreve frase. Um exemplo é hipótese; vira regra quando repete.
 
 ## 6. Medir
 
-`medir(job, chave)` → `scripts/escala_serie.py registrar-json` → série em `meu/serie-escala.jsonl`.
+Meta: `medir(job, chave)` → `scripts/escala_serie.py registrar-json`. YouTube: salve a resposta de
+`youtube_video(ids)` → `scripts/escala_serie.py registrar-youtube-json --de <arquivo> --oferta <host> --rodada Rnnn`.
+Ambos gravam a série em `meu/serie-escala.jsonl`.
 
 | Leituras | O que pode ser escrito |
 |---|---|

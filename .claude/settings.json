@@ -3,6 +3,9 @@
   "permissions": {
     "allow": [
       "mcp__hackingads__minerar",
+      "mcp__hackingads__google",
+      "mcp__hackingads__google_resultados",
+      "mcp__hackingads__youtube_video",
       "mcp__hackingads__paginas",
       "mcp__hackingads__status",
       "mcp__hackingads__cancelar",

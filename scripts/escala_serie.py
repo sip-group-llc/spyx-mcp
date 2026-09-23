@@ -192,27 +192,50 @@ def views_dia(med: dict, quando: str) -> float | None:
     return round(med["views"] / dias, 1)
 
 
+def registrar_youtube(med: dict, observado_em: str, oferta: str, rodada: str, origem: str) -> None:
+    vid = med.get("video_id")
+    if (not isinstance(vid, str) or not re.fullmatch(r"[A-Za-z0-9_-]{11}", vid)
+            or med.get("http") != 200 or not isinstance(med.get("views"), int)):
+        print(f"yt:{vid} · leitura FALHOU ({med.get('http')}, {med.get('erro') or med.get('status')}) — nao entra na serie")
+        return
+    key = f"yt:{vid}"
+    if any(r.get("observado_em") == observado_em for r in leituras(key)):
+        print(f"{key} · leitura ja registrada em {observado_em}")
+        return
+    med["views_dia_desde_publicacao"] = views_dia(med, observado_em)
+    reg = {"chave": key, "oferta": oferta, "rodada": rodada, "fonte": "youtube_watch",
+           "observado_em": observado_em, "http_ok": True, "medida": med, "origem": origem}
+    ant = acrescentar(reg)
+    cab = (f"{key} · {oferta} · {med['views']:,} views · pub {med.get('publicado')} · "
+           f"nao_listado={med.get('nao_listado')} · {med.get('canal')} ({med.get('inscritos_txt')})")
+    if not ant:
+        print(f"{cab}\n  LEITURA 1 — INVENTARIO; {med['views_dia_desde_publicacao']} views/dia desde a publicacao")
+    else:
+        h = (datetime.fromisoformat(observado_em) - datetime.fromisoformat(ant["observado_em"])).total_seconds() / 3600
+        d = med["views"] - ant["medida"]["views"]
+        print(f"{cab}\n  LEITURA {len(leituras(key))} — {d:+,} views em {h:.1f} h "
+              f"= {d / h * 24:,.0f} views/dia{'' if h >= 24 else ' (intervalo <24h: nao conta como repeticao)'}")
+
+
 def cmd_youtube(a) -> int:
-    """Leitura de views por video_id (REGRA PRIMORDIAL no YouTube: 2 leituras >=24h -> delta/dia)."""
+    """Leitura local opcional quando ja existe video_id."""
     for vid in [v.strip() for v in a.ids.split(",") if v.strip()]:
-        agora = datetime.now(timezone.utc).isoformat(timespec="seconds")
-        med = ler_video(vid)
-        if not med.get("views"):
-            print(f"yt:{vid} · leitura FALHOU ({med.get('http')}, {med.get('erro') or med.get('status')}) — nao entra na serie")
-            continue
-        med["views_dia_desde_publicacao"] = views_dia(med, agora)
-        reg = {"chave": f"yt:{vid}", "oferta": a.oferta, "rodada": a.rodada, "fonte": "youtube_watch",
-               "observado_em": agora, "http_ok": med["http"] == 200, "medida": med, "origem": "escala_serie.youtube"}
-        ant = acrescentar(reg)
-        cab = (f"yt:{vid} · {a.oferta} · {med['views']:,} views · pub {med['publicado']} · "
-               f"nao_listado={med['nao_listado']} · {med['canal']} ({med['inscritos_txt']})")
-        if not ant:
-            print(f"{cab}\n  LEITURA 1 — INVENTARIO; {med['views_dia_desde_publicacao']} views/dia desde a publicacao")
-        else:
-            h = (datetime.fromisoformat(agora) - datetime.fromisoformat(ant["observado_em"])).total_seconds() / 3600
-            d = med["views"] - ant["medida"]["views"]
-            print(f"{cab}\n  LEITURA {len(leituras(reg['chave']))} — {d:+,} views em {h:.1f} h "
-                  f"= {d / h * 24:,.0f} views/dia{'' if h >= 24 else ' (intervalo <24h: nao conta como repeticao)'}")
+        observado_em = datetime.now(timezone.utc).isoformat(timespec="seconds")
+        registrar_youtube(ler_video(vid), observado_em, a.oferta, a.rodada, "escala_serie.youtube")
+    return 0
+
+
+def cmd_registrar_youtube_json(a) -> int:
+    """Registra no arquivo pessoal as leituras devolvidas pela tool MCP youtube_video()."""
+    data = json.loads(Path(a.de).read_text(encoding="utf-8"))
+    if data.get("fonte") != "youtube_watch" or not isinstance(data.get("leituras"), list):
+        raise SystemExit("arquivo nao e uma resposta de youtube_video()")
+    for reading in data["leituras"]:
+        observado_em = reading.get("observado_em")
+        if not observado_em:
+            raise SystemExit("leitura sem observado_em")
+        med = {k: v for k, v in reading.items() if k != "observado_em"}
+        registrar_youtube(med, observado_em, a.oferta, a.rodada, str(a.de))
     return 0
 
 
@@ -261,6 +284,12 @@ def main() -> int:
     y.add_argument("--oferta", required=True, help="hostname de destino da oferta")
     y.add_argument("--rodada", required=True)
     y.set_defaults(func=cmd_youtube)
+
+    yj = sub.add_parser("registrar-youtube-json", help="grava a leitura devolvida por youtube_video() do MCP")
+    yj.add_argument("--de", required=True)
+    yj.add_argument("--oferta", required=True)
+    yj.add_argument("--rodada", required=True)
+    yj.set_defaults(func=cmd_registrar_youtube_json)
 
     v = sub.add_parser("ver", help="imprime a serie")
     v.add_argument("--chave")

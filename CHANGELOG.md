@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-23 — frente Google/YouTube
+
+- MCP: `google` descobre por termo e sonda por domínio no ATC; `google_resultados` pagina o resultado;
+  `youtube_video` mede o vídeo público. Google roda em fila própria com limites de páginas e anunciantes.
+- `base/GOAL-RENDA-EXTRA-YOUTUBE.md` e `CLAUDE.md` escolhem a rede pelo pedido; goals pessoais Meta seguem Meta.
+- `scripts/escala_serie.py registrar-youtube-json` grava no arquivo pessoal as leituras do MCP sem exigir
+  outra consulta à página do vídeo. VAV segue dependente da verificação da conta do operador.
+
 ## 2026-09-22 (v2 — base local)
 
 - A base de treinamento passa a viver na pasta da pessoa: `base/` (do operador, via `git pull`) e `meu/`
