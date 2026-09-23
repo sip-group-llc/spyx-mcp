@@ -16,9 +16,9 @@ O gate AUDIÊNCIA/PERSONAS: abre o perfil de cada Página que anuncia na busca `
 
 Interrompe um job de minerar() que ainda está rodando (por exemplo, preso em tentativas com 0 IDs). O que já foi coletado não é aproveitado; o job vira `cancelado`.
 
-## `status(job: string)`
+## `status(job: string, esperar?: integer)`
 
-Andamento ou resultado de um job de minerar(): rodando (minutos, últimas linhas, dica se a sessão travou) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do advertorial). Guarde o resumo em meu/dados/<job>.json; o dado bruto vem por anuncios(job).
+Andamento ou resultado de um job de minerar()/paginas(): rodando (minutos, últimas linhas, dica se a sessão travou) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do advertorial). `esperar=60` segura a resposta no servidor até 60 s enquanto o job roda — use SEMPRE em vez de chamar em sequência. Guarde o resumo em meu/dados/<job>.json; o dado bruto vem por anuncios(job).
 
 ## `anuncios(job: string, destino?: string, pagina?: integer, por_pagina?: integer)`
 

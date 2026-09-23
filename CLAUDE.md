@@ -50,10 +50,11 @@ pacote e no motor (tools novas ou renomeadas).
    e o que muda em relação à rodada anterior.
 2. **Minerar — descobrir primeiro, medir depois.** (Lição da R001 do primeiro fork, 22/09/2026: começar
    por frase de funil na Meta devolveu 107 anúncios no país inteiro e a 2ª busca travou.)
-   - **Descobrir os mais escalados**: `minerar(fonte="adheart", q="<2–3 termos AMPLOS do nicho>", pais,
-     sort="total_reach")`. Vem ordenado por alcance, com amostra; é a única fonte que ranqueia. Gasta cota
-     por termo: poucos termos, páginas fundas.
-   - **Medir e atribuir na Meta**: `minerar(q, pais)` → `status(job)` a cada ~2 min até `pronto`. Ordem das
+   - **Descobrir os mais escalados**: `minerar(fonte="adheart", q="<1–2 termos AMPLOS do nicho>", pais,
+     sort="total_reach", max_pages=8)`. Vem ordenado por alcance, com amostra; é a única fonte que ranqueia.
+     **Cota é por termo** (a tool recusa mais de 2): no máximo 4 chamadas por rodada; página funda é grátis.
+   - **Medir e atribuir na Meta**: `minerar(q, pais)` → `status(job, esperar=60)` até `pronto` (a espera
+     é no servidor; nunca chame `status` em sequência sem `esperar`). Ordem das
      frases: **volume → assinatura → formato** (termo comum do nicho primeiro; frase de funil só para achar o
      quiz que o termo comum não pega). **1 a 2 buscas por país e a Meta trava por ~12 h**: alterne o país a
      cada busca e não repita país na mesma hora. Uma coleta por vez.
@@ -95,8 +96,10 @@ pacote e no motor (tools novas ou renomeadas).
 Uma rodada inteira (descobrir → medir → revisar → série → relatório) leva horas e várias buscas com
 espera. Sem um modo de objetivo, cada turno seu termina no fim de um passo e a pessoa precisa te cutucar.
 Por isso, **quando a pessoa pedir uma rodada inteira ("minera X em Y", "traz os mais escalados de…"),
-antes de começar entregue o texto pronto pra ela colar no `/goal` do app** (≤ 4.000 caracteres, sem
-markdown pesado), montado a partir do goal em `meu/goals/`:
+responda SÓ com o texto pronto pra ela colar no `/goal` do app e PARE — sem chamar tool nenhuma.**
+Regra mecânica: se a mensagem da pessoa não contém a linha `CONDIÇÃO DE PARADA`, ela ainda não colou o
+`/goal`; entregue o texto (≤ 4.000 caracteres, sem markdown pesado, terminando na linha `CONDIÇÃO DE
+PARADA: …`), montado a partir do goal em `meu/goals/`:
 
 - alvo (nicho, região, padrão, quantidade), a ordem descobrir (AdHeart por alcance) → medir (Meta,
   volume → assinatura → formato, alternando país), o gate do entregável, a regra primordial, e o que

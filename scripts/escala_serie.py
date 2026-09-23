@@ -82,6 +82,27 @@ def acrescentar(registro: dict) -> dict | None:
         fh.write(json.dumps(registro, ensure_ascii=False) + "\n")
     return anteriores[-1] if anteriores else None
 
+def repeticao_valida(a: dict, b: dict) -> str | None:
+    """REGRA PRIMORDIAL: repeticao e a MESMA busca (q, pais, tipo), >= 24 h depois. Devolve o motivo se nao for."""
+    ba, bb = a.get("busca") or {}, b.get("busca") or {}
+    if (ba.get("q"), ba.get("country"), ba.get("search_type")) != (bb.get("q"), bb.get("country"), bb.get("search_type")):
+        return "buscas diferentes (q/pais/tipo) - outra lente, nao repeticao"
+    horas = abs((datetime.fromisoformat(b["observado_em"]) - datetime.fromisoformat(a["observado_em"])).total_seconds()) / 3600
+    if horas < 24:
+        return f"so {horas:.0f} h entre as leituras (minimo 24 h)"
+    return None
+
+
+def veredito(rs: list[dict]) -> str:
+    """Inventario ate existir UM par de leituras que passe em repeticao_valida."""
+    if len(rs) < 2:
+        return "INVENTARIO (1 leitura)"
+    motivos = [repeticao_valida(rs[i], rs[j]) for i in range(len(rs)) for j in range(i + 1, len(rs))]
+    if any(m is None for m in motivos):
+        return "indicios de escala liberados (par valido: mesma busca, >= 24 h)"
+    return f"{len(rs)} leituras, ainda INVENTARIO - {motivos[-1]}"
+
+
 
 def relatar(registro: dict, anterior: dict | None) -> str:
     m = registro["medida"]
@@ -93,11 +114,13 @@ def relatar(registro: dict, anterior: dict | None) -> str:
     d = m["ids_no_destino"] - a["ids_no_destino"]
     pct = f"{d / a['ids_no_destino'] * 100:+.1f}%" if a["ids_no_destino"] else "n/d"
     n = len(leituras(registro["chave"]))
-    return (f"{cab}\n  LEITURA {n} — anterior {anterior['observado_em'][:10]}: "
+    motivo = repeticao_valida(anterior, registro)
+    fecho = (f"  Com {n} leituras e um par valido, 'indicios de escala' pode ser escrito - sempre com a serie ao lado."
+             if motivo is None else f"  Ainda INVENTARIO: {motivo}. Escreva 'escala: pendente de repeticao valida'.")
+    return (f"{cab}\n  LEITURA {n} - anterior {anterior['observado_em'][:10]}: "
             f"{a['ids_no_destino']} -> {m['ids_no_destino']} ({d:+d}, {pct})\n"
             f"  personas {a['personas']} -> {m['personas']} · "
-            f"acima de 30d {a['acima_30d']} -> {m['acima_30d']}\n"
-            f"  Com {n} leituras, 'indicios de escala' pode ser escrito — sempre com a serie ao lado.")
+            f"acima de 30d {a['acima_30d']} -> {m['acima_30d']}\n" + fecho)
 
 
 def cmd_registrar(a) -> int:
@@ -207,12 +230,12 @@ def cmd_ver(a) -> int:
         print(f"{r['observado_em'][:16]} · {r['chave']:28s} · {r['rodada']:6s} · "
               f"{m['ids_no_destino']:5d} no destino / {m['ids_total']:5d} · "
               f"personas {m['personas']:3d} · >30d {m['acima_30d']:4d}")
-    porchave: dict[str, int] = {}
+    porchave: dict[str, list] = {}
     for r in rs:
-        porchave[r["chave"]] = porchave.get(r["chave"], 0) + 1
+        porchave.setdefault(r["chave"], []).append(r)
     print()
-    for k, n in sorted(porchave.items()):
-        print(f"  {k}: {n} leitura(s) — {'INVENTARIO' if n < 2 else 'indicios de escala liberados'}")
+    for k, lst in sorted(porchave.items()):
+        print(f"  {k}: {len(lst)} leitura(s) - {veredito(lst)}")
     return 0
 
 

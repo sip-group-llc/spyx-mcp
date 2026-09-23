@@ -17,3 +17,4 @@
 - Regra primordial aplicada pela tool `escala`: uma leitura é inventário, nunca escala.
 - `minerar(fonte="adheart", sort="total_reach")`: descoberta dos mais escalados por alcance; CLAUDE.md com "descobrir → medir", volume → assinatura → formato, alternância de país e piso por mercado; seção BR no GOAL-RENDA-EXTRA (lições da R001 do 1º fork).
 - `CLAUDE.md` "Rodar até o fim": ao pedir uma rodada inteira, o Claude entrega o texto do `/goal` (≤ 4.000 chars) com condição de parada; alternativas `/loop` e "continua".
+- `status(job, esperar=60)`: espera no servidor (150 chamadas viram ~10); AdHeart recusa >2 termos por chamada (cota é por termo); `escala_serie.py` só libera "indícios" com mesma busca e ≥24 h; o Claude responde SÓ com o texto do `/goal` quando a pessoa pede rodada sem tê-lo colado.
