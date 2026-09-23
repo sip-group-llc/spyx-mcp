@@ -68,6 +68,8 @@ pacote e no motor (tools novas ou renomeadas).
       candidato com a assinatura certa entra como inventário, não some.
    Na frente **Google/YouTube**, descubra pelo próprio ATC: `google(modo="descobrir", q="termo1;termo2", pais)` →
    `status(job, esperar=60)` → `google_resultados(job)`. Sonde candidatos por `google(modo="dominio", q="host", pais)`.
+   Leia `cobertura`: o limite global de anunciantes é uma amostra, e sugestões não sondadas não são resultados
+   negativos. `dominios_observados` são pistas; a prévia do Google não é landing nem prova do produto.
    Use os `video_id` ligados a `creative_id` para `youtube_video(ids)` e salve a resposta em `meu/dados/`.
    Uma leitura de views é inventário; repita os mesmos vídeos após ≥24 h e registre cada resposta com
    `python scripts/escala_serie.py registrar-youtube-json --de meu/dados/<arquivo> --oferta <host> --rodada Rnnn`.

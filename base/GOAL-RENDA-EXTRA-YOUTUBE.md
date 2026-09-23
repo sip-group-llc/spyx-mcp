@@ -13,10 +13,13 @@ Não promova serviço, aplicativo, produto físico ou marca sustentada pela fama
 
 1. `google(modo="descobrir", q="<1–3 termos locais separados por ;>", pais="<PAIS>", max_pages=3)`.
    Use `status(job, esperar=60)` até terminar e leia todas as páginas de `google_resultados(job)`.
-   A busca por termo pode achar a razão social sem revelar o domínio; isso é uma lacuna de atribuição.
+   O limite de anunciantes é uma amostra, distribuída entre os termos. Leia `cobertura` e
+   `sugestoes_nao_sondadas`; uma busca ampla sem candidato não encerra o nicho. A busca por termo pode
+   achar apenas a razão social. `dominios_observados` são pistas, não destinos confirmados.
 2. Para cada domínio candidato, `google(modo="dominio", q="<hostname>", pais="<PAIS>", max_pages=10)`.
    Registre anunciantes, formatos, datas, limite da paginação e `video_id` ligado ao `creative_id`.
-   Um resultado sem `video_id` não descarta a oferta.
+   A sonda confirma o hostname no recorte ATC, mas não a URL final do criativo. Um resultado sem
+   `video_id` não descarta a oferta. Nunca trate `displayads-formats.googleusercontent.com` como landing.
 3. `youtube_video(ids="<id1,id2>")` lê views, data de publicação, estado não listado e canal.
    Salve a resposta em `meu/dados/` e registre a leitura com
    `python scripts/escala_serie.py registrar-youtube-json --de meu/dados/<arquivo>.json --oferta <hostname> --rodada Rnnn`.

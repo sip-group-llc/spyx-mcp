@@ -14,7 +14,7 @@ Google/YouTube sem depender da Meta. `modo="descobrir"`: q = 1–3 termos do nic
 
 ## `google_resultados(job: string, pagina?: integer, por_pagina?: integer)`
 
-Resultados de google() paginados por anunciante/domínio, com IDs de vídeos e creative_id. Só a pessoa que iniciou o job pode ler. Vídeo sem ID ou domínio é lacuna explícita, não zero de escala.
+Resultados de google() paginados por anunciante/domínio, com IDs de vídeos e creative_id. Só a pessoa que iniciou o job pode ler. `cobertura` informa sugestões não sondadas. Domínio observado no criativo não é landing confirmada; `destino_exato_confirmado=false` exige verificação do elo anúncio → oferta. Vídeo sem ID ou domínio é lacuna, não zero de escala.
 
 ## `youtube_video(ids: string, pais?: string)`
 

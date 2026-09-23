@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-23 — correção da amostragem ATC
+
+- `google(descobrir)` distribui o limite global de anunciantes entre todos os termos pedidos e informa
+  sugestões não sondadas em `cobertura`.
+- Domínios vistos no payload do criativo são apenas pistas em `dominios_observados`; a URL técnica da prévia
+  não é apresentada como landing. `destino_exato_confirmado=false` explicita a atribuição pendente.
+
 ## 2026-09-23 — frente Google/YouTube
 
 - MCP: `google` descobre por termo e sonda por domínio no ATC; `google_resultados` pagina o resultado;
