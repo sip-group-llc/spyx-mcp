@@ -43,3 +43,10 @@ Não promova serviço, aplicativo, produto físico ou marca sustentada pela fama
 Escreva a rodada em `meu/rodadas/Rnnn.md`: termos, região, limites, candidatos, vínculos comprovados,
 leituras com data/hora e descartes. Se a busca ATC não achar vídeo auditável, declare a lacuna e a cobertura
 efetiva; não substitua silenciosamente por candidatos Meta.
+
+Mesmo com zero finalistas, entregue um ranking de indícios observados com os **3–5 achados mais fortes da
+amostra** (ou todos se houver menos): link do anúncio/ATC e do vídeo, contagens datadas, motivo de não passar no gate e o que
+seria preciso confirmar. Separe `video_id` encontrados de vídeos efetivamente lidos; leia `cobertura` antes
+de dizer que a busca terminou. Registre operações relevantes em `meu/DESCOBERTAS.md` como mapeadas ou
+hipóteses, sem transformá-las em favoritas ou avaliações da pessoa. Zero finalistas quer dizer nenhum
+comprovado **nesta cobertura**, nunca ausência de ofertas no mercado.

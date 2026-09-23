@@ -9,8 +9,10 @@ sem rosto, Páginas-persona, quiz>** mais escaladas em **<região>** e entregar 
 finalistas com ≥ 150 IDs ativos>**, NOVAS (fora das exclusões em `meu/CRITERIOS-meu.md`), sem audiência
 própria. Rede: <Meta, YouTube ou ambas>.
 
-**Antes de buscar:** `base/CRITERIOS.md` (REGRA PRIMORDIAL, ASSINATURAS), `meu/CRITERIOS-meu.md`, últimas
-3 rodadas. Declarar hipótese e o que muda.
+**Antes de ativar este goal:** executar `docs/goal-preflight.md`, preencher nicho, rede e país/região,
+mostrar o texto final à pessoa e esperar aprovação explícita. `base/CRITERIOS.md` (REGRA PRIMORDIAL,
+ASSINATURAS), `meu/CRITERIOS-meu.md`, `meu/DESCOBERTAS.md` quando existir e últimas 3 rodadas entram
+na exclusão e na hipótese inicial.
 
 **Busca Meta — descobrir, depois medir (use somente quando a rede incluir Meta):**
 1. `minerar(fonte="adheart", q="<1–2 termos amplos do nicho>", pais, sort="total_reach")`: os de maior
@@ -40,5 +42,7 @@ no YouTube, verificar canal e produtor. Marca-pessoa ou audiência grande: regis
 **Escala:** contagem única é inventário. Meta usa `medir` + `registrar-json`; YouTube usa views +
 `registrar-youtube-json`. "Escalada" só com 2 leituras comparáveis ≥24 h.
 
-**Fechar:** `meu/rodadas/Rnnn.md` + pedir veredito por candidato → `meu/avaliacoes.jsonl` → refinar
+**Fechar:** `meu/rodadas/Rnnn.md` com cobertura e finalistas comprovados **mais os 3–5 melhores achados
+parciais**, links e limites. Registrar achados relevantes em `meu/DESCOBERTAS.md` para não reapresentá-los
+como inéditos. Só após avaliação explícita da pessoa escrever em `meu/avaliacoes.jsonl` e refinar
 este goal e `meu/CRITERIOS-meu.md`.

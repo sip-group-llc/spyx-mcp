@@ -19,7 +19,7 @@ dá o veredito, e o que você aprende fica gravado em `.md` que só você edita.
 | | |
 |---|---|
 | **O que é** | um minerador de ofertas escaladas que separa *inventário* de *escala* e *anúncio* de *oferta* |
-| **O que você precisa** | Claude Code, git, Python 3 e a chave do operador |
+| **O que você precisa** | Codex ou Claude Code, git, Python 3 e a chave do operador |
 | **O que você não precisa** | conta em fonte nenhuma, proxy, infraestrutura: tudo isso mora no motor, atrás da chave |
 | **O que fica com você** | goals, critério, rodadas, avaliações e séries em `meu/`, na sua máquina |
 
@@ -30,7 +30,7 @@ git clone https://github.com/sip-group-llc/hackingads-mcp
 cd hackingads-mcp
 ```
 
-Troque `<SUA_CHAVE>` no [`.mcp.json`](.mcp.json) pela sua chave e abra o Claude Code na pasta:
+Troque `<SUA_CHAVE>` no [`.mcp.json`](.mcp.json) pela sua chave e abra esta pasta no Codex; no Claude Code, rode:
 
 ```bash
 claude
@@ -39,8 +39,10 @@ claude
 Na primeira abertura o Claude Code pergunta se você confia na pasta: **aceite**, é isso que libera as tools
 do motor e o `.mcp.json` sem perguntar a cada passo.
 
-Primeira conversa: **"como eu uso isso?"** ou direto
-**"leia meu/goals/GOAL-EXEMPLO.md e rode uma rodada de renda extra no YouTube, região ES"**.
+Primeira conversa: **"como eu uso isso?"** ou
+**"prepare uma rodada de renda extra no YouTube, região ES"**. O agente confere o escopo, mostra o Goal
+exato e pergunta se você aprova ativá-lo. Envie `/goal` somente depois dessa revisão se quiser a trava
+antes da ativação; o aplicativo pode ativar um `/goal` colado diretamente antes de o agente ler a mensagem.
 
 Sem chave? Abra uma issue [pedindo acesso](../../issues/new?template=acesso.md).
 
@@ -99,9 +101,10 @@ vira hipótese; repetição vira preferência; o que foi refutado sai.
 ## Uma rodada inteira, sem cutucar
 
 Uma rodada leva horas: várias buscas, esperas, medição. Peça a rodada ("minera renda extra no BR,
-traz os mais escalados") e o Claude te devolve **o texto pronto pra colar no `/goal`** do app, que segue
-até a rodada estar escrita em `meu/rodadas/`. Sem `/goal`, cada turno para no fim de um passo: aí é
-"continua" a cada vez, ou `/loop 5m <texto>` no terminal.
+traz os mais escalados") em mensagem comum. O agente pergunta apenas o que faltar, mostra o texto final
+e espera sua aprovação antes de ativar `/goal`. A rodada entrega finalistas comprovados **e** os achados
+mais fortes que ficaram abaixo dos critérios, com links e motivos; registra descobertas em `meu/`.
+O procedimento está em [docs/goal-preflight.md](docs/goal-preflight.md).
 
 ## Quanto tempo leva uma busca
 
@@ -113,10 +116,11 @@ tenta outra frase ou país. Uma coleta por vez: se outra pessoa estiver coletand
 
 ```
 CLAUDE.md          o ciclo, a base por dentro, a tradução base → motor, as regras
+AGENTS.md          entrada do Codex e trava de aprovação antes do Goal
 base/              CRITERIOS · README (ciclo) · METRICAS · GOAL-ADVERTORIAL · GOAL-RENDA-EXTRA · GOAL-RENDA-EXTRA-YOUTUBE · GOAL-RELACIONAMENTO
 meu/               CRITERIOS-meu · goals/ · rodadas/ · avaliacoes.jsonl · serie-escala.jsonl · dados/
 scripts/           escala_serie.py — a série da regra primordial
-docs/              tools do motor (gerado) · o ciclo · uma rodada de exemplo · estes diagramas
+docs/              tools do motor (gerado) · pré-voo do Goal · ciclo · exemplo · diagramas
 .claude/           permissões pré-aprovadas: tools do motor, WebFetch, o script; base/ bloqueada para escrita
 ```
 
@@ -126,6 +130,8 @@ docs/              tools do motor (gerado) · o ciclo · uma rodada de exemplo �
 git pull
 ```
 
-Só `base/` muda. O `CLAUDE.md` manda o seu Claude ler o diff antes da próxima rodada.
+O pacote atualiza `base/`, instruções e docs. Seus registros em `meu/` continuam pessoais. Leia o diff
+antes da próxima rodada; se um arquivo pessoal seu tiver o mesmo nome de um novo arquivo do pacote, resolva
+o conflito preservando seus dados.
 
 Mais: [as tools do motor](docs/tools.md) · [o ciclo](docs/ciclo.md) · [uma rodada de exemplo](docs/rodada-exemplo.md) · [changelog](CHANGELOG.md)

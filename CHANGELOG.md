@@ -1,5 +1,12 @@
 # Changelog
 
+## 2026-09-23 — pré-voo e entrega completa
+
+- `AGENTS.md` orienta o Codex e `docs/goal-preflight.md` exige país/rede definidos, prévia do Goal e
+  aprovação explícita antes da ativação assistida. Um `/goal` colado diretamente pode ser ativado pelo app.
+- Toda rodada entrega também ranking dos melhores achados parciais, cobertura medida e registro de
+  descobertas em `meu/`, mesmo sem finalistas comprovados. O histórico da R006 mostrou por que isso importa.
+
 ## 2026-09-23 — correção da amostragem ATC
 
 - `google(descobrir)` distribui o limite global de anunciantes entre todos os termos pedidos e informa

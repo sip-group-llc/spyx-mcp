@@ -5,6 +5,9 @@ youtube_video · status · cancelar · anuncios · paginas · medir · adheart`)
 O proxy por país já vem embutido em `minerar`, `paginas` e `google`. A **base de treinamento** e tudo o que a pessoa aprende
 moram nesta pasta, em `.md` que você lê e edita diretamente.
 
+Antes de preparar ou ativar uma rodada por `/goal`, siga `docs/goal-preflight.md`. O texto enviado pela
+pessoa é rascunho até ela aprovar a versão final. No Codex, `AGENTS.md` aponta para este mesmo ciclo.
+
 ## Onde está o quê
 
 | Pasta | O que é | Você |
@@ -31,7 +34,8 @@ trate a citação como evidência de método, não como arquivo a abrir.
 
 ## Quando o operador atualizar a base
 
-`git pull` traz `base/` nova e nunca toca em `meu/`. Depois de um pull, antes da rodada:
+`git pull` traz instruções e base novas. Os registros pessoais criados em `meu/` devem ser preservados;
+se houver conflito com um arquivo inicial versionado, resolva preservando os dados da pessoa. Depois de um pull, antes da rodada:
 
 ```bash
 git log --oneline -5 -- base/ && git diff HEAD~1 --stat -- base/
@@ -43,12 +47,14 @@ pacote e no motor (tools novas ou renomeadas).
 
 ## O ciclo (é o de `base/README.md`, "Ciclo por prompt")
 
-0. **Alvo e rede.** A pessoa aponta um goal em `meu/goals/` ou diz o alvo; nesse caso crie o arquivo a partir
-   de `meu/goals/GOAL-EXEMPLO.md`. Goal com "Rede única: Meta" continua Meta; pedido de YouTube usa
+0. **Alvo e rede.** A pessoa aponta um goal em `meu/goals/` ou diz o alvo; nesse caso prepare um rascunho a partir
+   de `meu/goals/GOAL-EXEMPLO.md` e só o grave após aprovação. Goal com "Rede única: Meta" continua Meta; pedido de YouTube usa
    `base/GOAL-RENDA-EXTRA-YOUTUBE.md` como referência. Pedido genérico sem rede cobre Meta e Google/YouTube,
    sem deixar os goals Meta antigos escolherem a rede por ele. Região vazia: UMA pergunta, nenhuma busca antes.
+   Mostre o rascunho completo e espere aprovação antes de ativar o Goal.
 1. **Preparar.** Ler `base/CRITERIOS.md` (REGRA PRIMORDIAL e ASSINATURAS primeiro), `meu/CRITERIOS-meu.md`
-   inteiro, as 3 últimas `meu/rodadas/` e `meu/avaliacoes.jsonl`. Declarar hipótese, rede, país, frases
+   inteiro, `meu/DESCOBERTAS.md` quando existir, as 3 últimas `meu/rodadas/` e `meu/avaliacoes.jsonl`.
+   Declarar hipótese, rede, país, frases
    e o que muda em relação à rodada anterior.
 2. **Minerar — descobrir primeiro, medir depois, na rede do pedido.** Na frente Meta, siga a lição da R001: começar
    por frase de funil na Meta devolveu 107 anúncios no país inteiro e a 2ª busca travou.)
@@ -88,7 +94,8 @@ pacote e no motor (tools novas ou renomeadas).
    série. No YouTube, registre `youtube_video()` com `registrar-youtube-json`; repita o mesmo `video_id` ≥24 h.
    **1 leitura = inventário**; "indícios de escala" só com 2 leituras separadas por ≥ 24 h.
 
-**Fechar:** `meu/rodadas/Rnnn.md` no formato de `docs/rodada-exemplo.md`.
+**Fechar:** `meu/rodadas/Rnnn.md` no formato de `docs/rodada-exemplo.md`, com finalistas e
+ranking dos melhores achados parciais. Salve descobertas relevantes em `meu/DESCOBERTAS.md`.
 
 ## Tradução: a base foi escrita para o ambiente do operador
 
@@ -108,24 +115,20 @@ pacote e no motor (tools novas ou renomeadas).
 
 ## Rodar até o fim: o texto do `/goal`
 
-Uma rodada inteira (descobrir → medir → revisar → série → relatório) leva horas e várias buscas com
-espera. Sem um modo de objetivo, cada turno seu termina no fim de um passo e a pessoa precisa te cutucar.
-Por isso, **quando a pessoa pedir uma rodada inteira ("minera X em Y", "traz os mais escalados de…"),
-responda SÓ com o texto pronto pra ela colar no `/goal` do app e PARE — sem chamar tool nenhuma.**
-Regra mecânica: se a mensagem da pessoa não contém a linha `CONDIÇÃO DE PARADA`, ela ainda não colou o
-`/goal`; entregue o texto (≤ 4.000 caracteres, sem markdown pesado, terminando na linha `CONDIÇÃO DE
-PARADA: …`), montado a partir do goal em `meu/goals/`:
+Uma rodada inteira precisa de alvo e condição de parada claros. A regra de preparação, aprovação e
+entrega está em `docs/goal-preflight.md` e vale para Claude e Codex.
 
-- alvo (nicho, região, rede, padrão, quantidade), a ordem de descoberta e medida da rede selecionada
-  (Meta: AdHeart → Meta; YouTube: ATC → vídeo → views), o gate do entregável, a regra primordial, e o que
-  fechar (`meu/rodadas/Rnnn.md`, avaliações, série, refinar `meu/`);
-- a condição de parada explícita: "só pare quando a rodada estiver escrita em `meu/rodadas/` com os
-  candidatos medidos ou a lacuna registrada; `bloqueada` num país não encerra a rodada, alterna o país";
-- o que **não** é motivo pra parar: esperar `status` (chame de novo), fila, uma busca vazia.
+Quando a pessoa pedir uma rodada ou mandar um texto de goal em conversa, **não gere/injete `/goal` nem
+comece a minerar imediatamente**. Confira os campos essenciais; se faltar país/região, pergunte antes de
+escrever o texto final. Com os campos completos, mostre o Goal exato (≤ 4.000 caracteres, terminando em
+`CONDIÇÃO DE PARADA: …`) e espere a aprovação explícita daquela versão. Resposta que apenas informa um
+parâmetro não é aprovação. Após aprovação, ative o Goal pelo recurso disponível ou entregue o texto para
+a pessoa colar; então execute sem microconfirmações.
 
-Se a pessoa já colou o `/goal`, execute sem parar entre passos: espera de coleta é `status` repetido,
-não fim de turno. Alternativas quando não há `/goal`: no Claude Code de terminal, `/loop 5m <mesmo
-texto>`; ou a pessoa manda "continua" e você retoma de `meu/rodadas/` e `meu/dados/`.
+A condição de parada inclui finalistas comprovados **e** ranking dos achados fortes abaixo do gate, links,
+cobertura e `meu/DESCOBERTAS.md`. Esperar `status`, uma busca vazia ou escrever uma rodada parcial não
+encerra por si só o objetivo. Se a pessoa colar `/goal` literalmente antes do pré-voo, a aplicação pode
+ativá-lo primeiro; valide o escopo e peça o dado faltante antes de fazer a coleta.
 
 ## Primeira sessão
 

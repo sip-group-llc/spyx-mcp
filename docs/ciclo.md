@@ -9,6 +9,9 @@ Um arquivo em `meu/goals/` (comece por `GOAL-EXEMPLO.md`). Nicho, região, **red
 (frases por idioma, exclusões, gate de escala) já está na base; você refina o seu goal quando quiser,
 editando o `.md`.
 
+Antes de ativar `/goal`, siga [o pré-voo](goal-preflight.md): resolva país e campos ausentes, mostre o
+texto final e espere a aprovação explícita da pessoa. O texto enviado em conversa é um rascunho.
+
 ## 1. Preparar
 
 Lê `base/CRITERIOS.md` (REGRA PRIMORDIAL e ASSINATURAS primeiro), `meu/CRITERIOS-meu.md`, as 3 últimas
@@ -62,4 +65,6 @@ Atribuição e persistência valem com uma leitura. Tamanho, não.
 ## Fechar
 
 `meu/rodadas/Rnnn.md`: hipótese, buscas, candidatos (inventário/atribuição/persistência/personas),
-lacunas, o que muda na próxima. A próxima rodada começa lendo isto.
+lacunas, o que muda na próxima. Entregue também o ranking dos melhores achados abaixo do gate, mesmo com
+zero finalistas, e grave descobertas relevantes em `meu/DESCOBERTAS.md` como inventário ou hipótese. A
+próxima rodada começa lendo ambos.
