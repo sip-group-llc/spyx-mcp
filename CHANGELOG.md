@@ -1,5 +1,10 @@
 # Changelog
 
+## 2026-09-23 — setup por cliente
+
+- README distingue `.mcp.json` do Claude Code de `~/.codex/config.toml` do Codex para o MCP remoto.
+  A chave individual permanece fora do repositório.
+
 ## 2026-09-23 — pré-voo e entrega completa
 
 - `AGENTS.md` orienta o Codex e `docs/goal-preflight.md` exige país/rede definidos, prévia do Goal e

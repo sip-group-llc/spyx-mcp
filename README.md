@@ -30,14 +30,28 @@ git clone https://github.com/sip-group-llc/hackingads-mcp
 cd hackingads-mcp
 ```
 
-Troque `<SUA_CHAVE>` no [`.mcp.json`](.mcp.json) pela sua chave e abra esta pasta no Codex; no Claude Code, rode:
+Escolha o cliente:
+
+**Claude Code:** troque `<SUA_CHAVE>` no [`.mcp.json`](.mcp.json) pela sua chave individual e rode na pasta:
 
 ```bash
 claude
 ```
 
-Na primeira abertura o Claude Code pergunta se você confia na pasta: **aceite**, é isso que libera as tools
-do motor e o `.mcp.json` sem perguntar a cada passo.
+Na primeira abertura, aceite a confiança na pasta para carregar o `.mcp.json` e as ferramentas do motor.
+
+**Codex:** adicione ao `~/.codex/config.toml` do seu usuário (no Windows,
+`%USERPROFILE%\.codex\config.toml`) e substitua `<SUA_CHAVE>`:
+
+```toml
+[mcp_servers.hackingads]
+url = "https://arasaka.corex11.tech/mcp"
+http_headers = { Authorization = "Bearer <SUA_CHAVE>" }
+```
+
+Abra esta pasta em uma nova tarefa do Codex; o [AGENTS.md](AGENTS.md) orienta o fluxo. Confira se o MCP
+`hackingads` aparece com `google`, `google_resultados`, `youtube_video`, `minerar` e `status`. O
+`config.toml` é pessoal; não coloque a chave em arquivos versionados nem publique seu `.mcp.json` editado.
 
 Primeira conversa: **"como eu uso isso?"** ou
 **"prepare uma rodada de renda extra no YouTube, região ES"**. O agente confere o escopo, mostra o Goal
