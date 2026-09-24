@@ -1,5 +1,14 @@
 # Prompt de busca — RELACIONAMENTO em formato de advertorial com persona, em escala
 
+> **Execução pelo MCP:** use este Goal como critério; monte o texto a ativar pelo
+> [modelo atual](../meu/goals/GOAL-EXEMPLO.md), sem colar a versão curta abaixo.
+> Antes de ativar, siga [o pré-voo](../docs/goal-preflight.md).
+> Defina a rede com a pessoa; Meta é a frente principal deste método e YouTube
+> só entra se estiver no recorte aprovado. Depois da aprovação, chame
+> `planejar_fontes(rede, pais, alvo)` e siga [o mapa atual](../docs/fontes.md)
+> para registrar os dez mineradores como usados, condicionais ou fora da rede.
+> Comandos locais e listas de fontes abaixo são registros do laboratório.
+
 > Criado em **21/09/2026** a pedido do usuário. É o recorte onde o método do
 > [GOAL-ADVERTORIAL](GOAL-ADVERTORIAL.md) mais rendeu até agora: **as três finalistas da R017 são de
 > relacionamento** (ErosCode, Muses Academy, Céleste Valmont), aprovadas como "boa" pelo usuário. Este

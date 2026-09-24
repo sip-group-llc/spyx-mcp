@@ -1,5 +1,13 @@
 # Prompt de busca — RENDA EXTRA na META (Facebook/Instagram), advertorial com persona, em escala
 
+> **Execução pelo MCP:** use este Goal como critério; monte o texto a ativar pelo
+> [modelo atual](../meu/goals/GOAL-EXEMPLO.md), sem colar a versão curta abaixo.
+> Este recorte é exclusivo da Meta. Antes de ativar, siga
+> [o pré-voo](../docs/goal-preflight.md); depois da aprovação, chame
+> `planejar_fontes(rede="meta", pais, alvo)` e siga [o mapa atual](../docs/fontes.md).
+> Registre a situação dos dez mineradores, consultando apenas os pertinentes à
+> Meta. A lista curta de fontes e os comandos locais abaixo são históricos.
+
 > **Rede: Meta.** Este é o GOAL de Facebook. Para minerar **só YouTube** (Google ATC + VAV, sem Meta),
 > use o par [GOAL-RENDA-EXTRA-YOUTUBE](GOAL-RENDA-EXTRA-YOUTUBE.md). Separados em 22/09/2026 para que
 > cada rodada enxergue uma rede só; nunca colar os dois no mesmo `/goal`.

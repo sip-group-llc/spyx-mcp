@@ -10,6 +10,13 @@ Se a pessoa colar literalmente `/goal ...`, a aplicação pode ativá-lo antes d
 
 ## Escolha das fontes
 
+Os quatro Goals em `base/` preservam critérios e exemplos do operador. Para
+executar um deles neste MCP, prepare um Goal pessoal com
+`meu/goals/GOAL-EXEMPLO.md`; não cole literalmente a versão curta histórica de
+`base/` em `/goal`. Use o pré-voo e o roteamento atual abaixo para escolher
+ferramentas. Comandos `scripts/...`, listas antigas de fontes e estados de sessão
+registrados na base não descrevem a disponibilidade atual do servidor.
+
 Depois da aprovação do Goal, chame `planejar_fontes(rede, pais, alvo)` e leia
 `docs/fontes.md`. Registre a decisão para cada um dos dez mineradores e consulte
 os compatíveis em lotes limitados. `fontes()` mostra pré-requisitos e o último

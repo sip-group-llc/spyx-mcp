@@ -1,6 +1,15 @@
 # Prompt de busca — ofertas de ADVERTORIAL com persona, em escala
 
-> Especialização do prompt padrão [GOAL.md](GOAL.md), criada em 20/09/2026 a partir do exemplo que o
+> **Execução pelo MCP:** use este Goal como critério; monte o texto a ativar pelo
+> [modelo atual](../meu/goals/GOAL-EXEMPLO.md), sem colar a versão curta abaixo.
+> Antes de ativar, siga [o pré-voo](../docs/goal-preflight.md).
+> Defina a rede com a pessoa; Meta é a frente principal deste método e YouTube
+> só entra se estiver no recorte aprovado. Depois da aprovação, chame
+> `planejar_fontes(rede, pais, alvo)` e siga [o mapa atual](../docs/fontes.md)
+> para registrar os dez mineradores como usados, condicionais ou fora da rede.
+> Comandos locais e listas de fontes abaixo são registros do laboratório.
+
+> Especialização do prompt padrão do operador, criada em 20/09/2026 a partir do exemplo que o
 > usuário mandou (`myavellis.com`) e do que a varredura dele revelou. Para outro recorte, usar o padrão.
 > A preferência que originou este arquivo está em [CRITERIOS.md](CRITERIOS.md), seção
 > "ESCALA MAIOR E ÂNGULO DE ADVERTORIAL".

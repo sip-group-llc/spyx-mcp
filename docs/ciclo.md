@@ -8,6 +8,8 @@ Motor = tools do MCP. Memória = arquivos em `meu/`.
 Um arquivo em `meu/goals/` (comece por `GOAL-EXEMPLO.md`). Nicho, região, **rede**, padrão, quantidade. O método
 (frases por idioma, exclusões, gate de escala) já está na base; você refina o seu goal quando quiser,
 editando o `.md`.
+Os quatro Goals de `base/` são referências de critério; ao usar o MCP, derive
+o texto pelo modelo pessoal. Não cole a versão curta histórica da base em `/goal`.
 
 Antes de ativar `/goal`, siga [o pré-voo](goal-preflight.md): resolva país e campos ausentes, mostre o
 texto final e espere a aprovação explícita da pessoa. O texto enviado em conversa é um rascunho.

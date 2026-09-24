@@ -23,6 +23,14 @@ for name in ("AGENTS.md", "CLAUDE.md", "docs/ciclo.md", "docs/goal-preflight.md"
              "docs/fontes.md", "meu/goals/GOAL-EXEMPLO.md"):
     if "planejar_fontes" not in (root / name).read_text(encoding="utf-8"):
         errors.append(f"roteamento ausente: {name}")
+for goal in sorted((root / "base").glob("GOAL-*.md")):
+    opening = goal.read_text(encoding="utf-8").splitlines()[:12]
+    if not any("planejar_fontes" in line for line in opening):
+        errors.append(f"Goal sem roteamento MCP no início: {goal.name}")
+    if goal.name != "GOAL-RENDA-EXTRA-YOUTUBE.md" and not any(
+        "sem colar a versão curta" in line for line in opening
+    ):
+        errors.append(f"Goal histórico sem aviso de cópia: {goal.name}")
 active_docs = ("README.md", "AGENTS.md", "CLAUDE.md", "docs/ciclo.md", "docs/fontes.md",
                "docs/goal-preflight.md", "docs/rodada-exemplo.md", "meu/goals/GOAL-EXEMPLO.md")
 for name in active_docs:

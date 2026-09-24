@@ -36,6 +36,9 @@ Os GOALs em `base/` definem rede e critério; seus comandos locais e listas de
 fontes são registros do ambiente do operador. No MCP atual, o roteamento de
 fontes é o de `planejar_fontes` e `docs/fontes.md`, inclusive quando um GOAL
 histórico cita apenas AdHeart ou diz que VAV estava sem sessão.
+Para ativar qualquer um deles, crie a versão pessoal a partir de
+`meu/goals/GOAL-EXEMPLO.md` e mostre o texto exato no pré-voo. Não copie a
+versão curta histórica da base como comando executável do MCP.
 
 ## Quando o operador atualizar a base
 

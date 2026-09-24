@@ -1,5 +1,10 @@
 # GOAL — renda extra no YouTube
 
+> **Execução pelo MCP:** siga [o pré-voo](../docs/goal-preflight.md) e, após
+> aprovação, `planejar_fontes(rede="youtube", pais, alvo)`. Registre a decisão
+> sobre os dez mineradores; neste recorte VAV descobre e Google ATC confirma.
+> Confira a sessão atual em `fontes()` e [os limites das fontes](../docs/fontes.md).
+
 Este é o método para buscar ofertas de renda extra anunciadas no YouTube. Região e idioma são parâmetros
 da rodada. A rede é YouTube; a Meta não entra como filtro. Guarde ajustes pessoais em `meu/goals/`.
 
