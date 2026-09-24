@@ -16,6 +16,18 @@ Google/YouTube sem depender da Meta. `modo="descobrir"`: q = 1–3 termos do nic
 
 Resultados de google() paginados por anunciante/domínio, com IDs de vídeos e creative_id. Só a pessoa que iniciou o job pode ler. `cobertura` informa sugestões não sondadas. Domínio observado no criativo não é landing confirmada; `destino_exato_confirmado=false` exige verificação do elo anúncio → oferta. Vídeo sem ID ou domínio é lacuna, não zero de escala.
 
+## `fontes()`
+
+Inventário das dez fontes credenciadas e das bibliotecas Meta/Google. `pre_requisitos_presentes` confirma apenas arquivos e nomes de credencial; consulte um job limitado antes de afirmar que a sessão, assinatura, quota ou resposta do fornecedor funcionam.
+
+## `minerador(fonte: string, q?: string, pais?: string, max_pages?: integer, limite?: integer)`
+
+Consulta limitada de AmericanSwipe, VAV, Anstrex, Trendtrack, MineraROI, Foreplay, Adyntel, Tyver ou SpyHouse. Cada fonte mantém sua capacidade real: VAV aceita domínio ou catálogo YouTube; AmericanSwipe, Anstrex e MineraROI são catálogos; Foreplay não filtra país. Devolve job: use status(job, esperar=60) e minerador_resultados(job). O resultado fica privado por pessoa, sem publicação automática no acervo. Catálogo não confirma veiculação atual.
+
+## `minerador_resultados(job: string, pagina?: integer, por_pagina?: integer)`
+
+Resultado paginado de minerador(job), com fonte, horário, cobertura, links e métricas de catálogo rotuladas. Não devolve o bruto nem converte volume do fornecedor em escala.
+
 ## `youtube_video(ids: string, pais?: string)`
 
 Lê 1–3 vídeos públicos do YouTube por video_id: views, publicação, não listado, canal e inscritos, com horário UTC. A leitura isolada é inventário; repita os mesmos IDs após >=24h para medir views/dia. Um ID vindo do ATC liga o vídeo a anúncio pago; views sozinhas não provam entrega paga nem vendas.
@@ -26,11 +38,11 @@ O gate AUDIÊNCIA/PERSONAS: abre o perfil de cada Página que anuncia na busca `
 
 ## `cancelar(job: string)`
 
-Interrompe um job de minerar(), paginas() ou google() que ainda está rodando. O que já foi coletado não é aproveitado; o job vira `cancelado`.
+Interrompe um job de minerar(), paginas(), google() ou minerador() que ainda está rodando. O que já foi coletado não é aproveitado; o job vira `cancelado`.
 
 ## `status(job: string, esperar?: integer)`
 
-Andamento ou resultado de um job de minerar()/paginas()/google(): rodando (minutos, últimas linhas, dica se a sessão travou) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do advertorial). `esperar=60` segura a resposta no servidor até 60 s enquanto o job roda — use SEMPRE em vez de chamar em sequência. Guarde o resumo em meu/dados/<job>.json; o dado bruto vem por anuncios(job).
+Andamento ou resultado de um job de minerar()/paginas()/google()/minerador(): rodando (minutos, últimas linhas, dica se a sessão travou) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do advertorial). `esperar=60` segura a resposta no servidor até 60 s enquanto o job roda — use SEMPRE em vez de chamar em sequência. Guarde o resumo em meu/dados/<job>.json; o dado bruto vem por anuncios(job).
 
 ## `anuncios(job: string, destino?: string, pagina?: integer, por_pagina?: integer)`
 

@@ -3,13 +3,14 @@
 <p align="center"><img src="docs/img/hero.svg" alt="anúncios minerados: quiz com persona, atribuição, série de escala" width="100%"></p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/motor-MCP%20remoto%20%C2%B7%2010%20tools-e5484d?style=flat-square" alt="motor">
+<img src="https://img.shields.io/badge/motor-MCP%20remoto%20%C2%B7%2013%20tools-e5484d?style=flat-square" alt="motor">
 <img src="https://img.shields.io/badge/base-local%20%C2%B7%20.md%20editados%20pelo%20seu%20Claude-3fb950?style=flat-square" alt="base">
-<img src="https://img.shields.io/badge/fontes-Meta%20%C2%B7%20AdHeart%20%C2%B7%20Google%20ATC%20%C2%B7%20YouTube-2f81f7?style=flat-square" alt="fontes">
+<img src="https://img.shields.io/badge/fontes-10%20mineradores%20%C2%B7%20Meta%20%C2%B7%20Google-2f81f7?style=flat-square" alt="fontes">
 <img src="https://img.shields.io/badge/regra-escala%20%3D%202%20leituras%20%E2%89%A5%2024h-d29922?style=flat-square" alt="regra">
 </p>
 
-Inteligência de anúncios **no ar agora**, operada pelo seu Claude. Você clona esta pasta, cola a sua chave
+Inteligência de anúncios e catálogos, com confirmação de veiculação atual nas bibliotecas públicas,
+operada pelo seu Claude. Você clona esta pasta, cola a sua chave
 e opera em conversa: o motor coleta, o seu Claude audita com um critério já calibrado em 24 rodadas, você
 dá o veredito, e o que você aprende fica gravado em `.md` que só você edita. A base do operador chega por
 `git pull`; a sua nunca é sobrescrita.
@@ -18,7 +19,7 @@ dá o veredito, e o que você aprende fica gravado em `.md` que só você edita.
 
 | | |
 |---|---|
-| **O que é** | um minerador de ofertas escaladas que separa *inventário* de *escala* e *anúncio* de *oferta* |
+| **O que é** | um motor que descobre ofertas e mede indícios de escala, separando *inventário* de *escala* e *anúncio* de *oferta* |
 | **O que você precisa** | Codex ou Claude Code, git, Python 3 e a chave do operador |
 | **O que você não precisa** | conta em fonte nenhuma, proxy, infraestrutura: tudo isso mora no motor, atrás da chave |
 | **O que fica com você** | goals, critério, rodadas, avaliações e séries em `meu/`, na sua máquina |
@@ -50,7 +51,7 @@ http_headers = { Authorization = "Bearer <SUA_CHAVE>" }
 ```
 
 Abra esta pasta em uma nova tarefa do Codex; o [AGENTS.md](AGENTS.md) orienta o fluxo. Confira se o MCP
-`hackingads` aparece com `google`, `google_resultados`, `youtube_video`, `minerar` e `status`. O
+`hackingads` aparece com `fontes`, `minerador`, `minerador_resultados`, `google`, `minerar` e `status`. O
 `config.toml` é pessoal; não coloque a chave em arquivos versionados nem publique seu `.mcp.json` editado.
 
 Primeira conversa: **"como eu uso isso?"** ou
@@ -65,9 +66,12 @@ Sem chave? Abra uma issue [pedindo acesso](../../issues/new?template=acesso.md).
 <p align="center"><img src="docs/img/ciclo.svg" alt="sua máquina: meu/ + base/ + o seu Claude + escala_serie · motor remoto: minerar, paginas, status, anuncios, medir" width="100%"></p>
 
 Uma rodada é uma conversa em seis passos: **preparar** (ler o critério e as suas rodadas) → **minerar**
-(Meta: `minerar` → `status` → `anuncios`; YouTube: `google` → `google_resultados` → `youtube_video`) → **revisar** (abrir a landing e medir a audiência) →
+(Meta: `fontes` → `minerador` quando compatível → `minerar` → `anuncios`; YouTube:
+`google` → `google_resultados` → `minerador(fonte="vav")` quando a sessão responder →
+`youtube_video`) → **revisar** (abrir a landing e medir a audiência) →
 **ouvir** (o seu veredito, com as suas palavras) → **refinar** (editar o seu critério e o seu goal) →
-**medir** (`medir` → série local). Fecha em `meu/rodadas/Rnnn.md`. Detalhes em [docs/ciclo.md](docs/ciclo.md).
+**medir** (`medir` → série local). Fecha em `meu/rodadas/Rnnn.md`. As capacidades e limitações de cada
+fonte estão em [docs/fontes.md](docs/fontes.md); o ciclo completo está em [docs/ciclo.md](docs/ciclo.md).
 
 ## A teoria por trás
 
@@ -122,9 +126,10 @@ O procedimento está em [docs/goal-preflight.md](docs/goal-preflight.md).
 
 ## Quanto tempo leva uma busca
 
-2–10 min. Se a fonte travar a sessão, o coletor insiste com esperas crescentes por até ~15 min e então
-devolve `bloqueada=true`. O `status` mostra os minutos decorridos e avisa; `cancelar(job)` interrompe e você
-tenta outra frase ou país. Uma coleta por vez: se outra pessoa estiver coletando, a sua entra na fila.
+Uma busca pode levar minutos. A Meta pode bloquear a sessão e devolver `bloqueada=true`; isso não é zero
+anúncios. `status(job, esperar=60)` acompanha a execução e `cancelar(job)` interrompe. Mineradores pagos
+dependem da sessão, da assinatura e da quota atuais. `fontes()` confirma pré-requisitos, e a resposta do job
+confirma a execução. Consulte uma fonte compatível por vez dentro dos limites informados.
 
 ## O que tem na pasta
 
@@ -148,4 +153,4 @@ O pacote atualiza `base/`, instruções e docs. Seus registros em `meu/` continu
 antes da próxima rodada; se um arquivo pessoal seu tiver o mesmo nome de um novo arquivo do pacote, resolva
 o conflito preservando seus dados.
 
-Mais: [as tools do motor](docs/tools.md) · [o ciclo](docs/ciclo.md) · [uma rodada de exemplo](docs/rodada-exemplo.md) · [changelog](CHANGELOG.md)
+Mais: [as tools do motor](docs/tools.md) · [as fontes](docs/fontes.md) · [o ciclo](docs/ciclo.md) · [uma rodada de exemplo](docs/rodada-exemplo.md) · [changelog](CHANGELOG.md)

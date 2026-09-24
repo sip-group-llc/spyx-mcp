@@ -1,7 +1,8 @@
 # HackingAds — operar o minerador com a base de treinamento local
 
-Você opera para UMA pessoa. O **motor** é o MCP `hackingads` (`minerar · google · google_resultados ·
-youtube_video · status · cancelar · anuncios · paginas · medir · adheart`); ele coleta e devolve dado.
+Você opera para UMA pessoa. O **motor** é o MCP `hackingads` (`fontes · minerador ·
+minerador_resultados · minerar · google · google_resultados · youtube_video · status ·
+cancelar · anuncios · paginas · medir · adheart`); ele coleta e devolve dado.
 O proxy por país já vem embutido em `minerar`, `paginas` e `google`. A **base de treinamento** e tudo o que a pessoa aprende
 moram nesta pasta, em `.md` que você lê e edita diretamente.
 
@@ -56,10 +57,18 @@ pacote e no motor (tools novas ou renomeadas).
    inteiro, `meu/DESCOBERTAS.md` quando existir, as 3 últimas `meu/rodadas/` e `meu/avaliacoes.jsonl`.
    Declarar hipótese, rede, país, frases
    e o que muda em relação à rodada anterior.
-2. **Minerar — descobrir primeiro, medir depois, na rede do pedido.** Na frente Meta, siga a lição da R001: começar
+2. **Minerar — descobrir primeiro, medir depois, na rede do pedido.** Consulte `fontes()`
+   e [o mapa de capacidades](docs/fontes.md). Para cada fonte pertinente, registre
+   consultada, bloqueada, sem quota ou incompatível; não force fontes de outra rede.
+   Uma credencial presente não prova sessão nem assinatura. Use `minerador(fonte, q,
+   pais, max_pages, limite)` para Tyver, Adyntel, Trendtrack, Foreplay, MineraROI,
+   AmericanSwipe, Anstrex, SpyHouse ou VAV e leia `status(job, esperar=60)` seguido
+   de `minerador_resultados(job)`. Fontes de catálogo geram candidatos que precisam
+   de confirmação pública, não medição de escala. Deduplicate ofertas por produto
+   e destino sem somar anúncios de fornecedores distintos. Na frente Meta, siga a lição da R001: começar
    por frase de funil na Meta devolveu 107 anúncios no país inteiro e a 2ª busca travou.)
     - **Descobrir candidatos Meta**: `minerar(fonte="adheart", q="<1–2 termos AMPLOS do nicho>", pais,
-     sort="total_reach", max_pages=8)`. Vem ordenado por alcance, com amostra; é a única fonte que ranqueia.
+     sort="total_reach", max_pages=8)`. Vem ordenado pelo alcance estimado pelo fornecedor, com amostra.
      **Cota é por termo** (a tool recusa mais de 2): no máximo 4 chamadas por rodada; página funda é grátis.
    - **Medir e atribuir na Meta**: `minerar(q, pais)` → `status(job, esperar=60)` até `pronto` (a espera
      é no servidor; nunca chame `status` em sequência sem `esperar`). Ordem das
@@ -80,8 +89,9 @@ pacote e no motor (tools novas ou renomeadas).
    Uma leitura de views é inventário; repita os mesmos vídeos após ≥24 h e registre cada resposta com
    `python scripts/escala_serie.py registrar-youtube-json --de meu/dados/<arquivo> --oferta <host> --rodada Rnnn`.
    ATC sem `video_id` é lacuna, não ausência de anúncio. Um vídeo listado pode ter views orgânicas;
-   confirme anúncio, destino, país e audiência antes de promover. VAV não integra o MCP enquanto a sessão
-   exigir verificação do operador; a rota ATC → vídeo funciona sem ele.
+   confirme anúncio, destino, país e audiência antes de promover. Quando a sessão VAV responder,
+   `minerador(fonte="vav", q="<hostname>", pais)` fecha o elo destino → vídeo; se a sessão
+   estiver vencida, declare o bloqueio e siga pelo ATC.
 3. **Revisar.** Abrir a landing (WebFetch) **antes** de contar por marca. Fora: app, SaaS, serviço,
    corretora, vaga, físico, micronovela. Distinguir anúncio, página, domínio e oferta.
 4. **Ouvir.** A pessoa avalia ("R003-B ruim pelo produto"). Acrescente uma linha em `meu/avaliacoes.jsonl`:
@@ -109,7 +119,7 @@ ranking dos melhores achados parciais. Salve descobertas relevantes em `meu/DESC
 | `arasaka.py doctor`, `/meus`, favoritas, utilizadas | não existem; a exclusão da pessoa é a seção *Exclusões* de `meu/CRITERIOS-meu.md` |
 | `atc_descoberta.py`, `atc_sonda_dominio.py`, `atc_videos.py` | `google(descobrir|dominio)` → `status` → `google_resultados` |
 | página do vídeo YouTube | `youtube_video(ids)` → `registrar-youtube-json` no arquivo pessoal |
-| VAV | sessão do fornecedor em verificação; declare indisponibilidade quando fizer diferença |
+| VAV | `minerador(fonte="vav")`, sujeito à sessão atual; `fontes()` só verifica pré-requisitos |
 | `D:/Projetos/…`, `outputs/<sessão>/` | esta pasta e `meu/dados/` |
 | `OFERTAS-MAPEADAS.md`, rodadas R0xx do operador | não vêm no pacote; o que a pessoa mapeou fica em `meu/` |
 

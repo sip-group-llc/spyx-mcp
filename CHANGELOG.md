@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-09-24 — todos os conectores no MCP
+
+- `fontes` inventaria dez mineradores credenciados e as bibliotecas Meta/Google, distinguindo
+  pré-requisito de acesso testado.
+- `minerador` e `minerador_resultados` dão acesso limitado e privado por pessoa a AmericanSwipe,
+  VAV, Anstrex, Trendtrack, MineraROI, Foreplay, Adyntel, Tyver e SpyHouse.
+- O uso por rede, filtros reais e confirmação pública está em `docs/fontes.md`.
+
 ## 2026-09-23 — setup por cliente
 
 - README distingue `.mcp.json` do Claude Code de `~/.codex/config.toml` do Codex para o MCP remoto.

@@ -20,12 +20,21 @@ rodada anterior.
 
 ## 2. Minerar
 
+Comece com `fontes()` e [o mapa das fontes](fontes.md). Registre cada fonte
+pertinente como consultada, bloqueada, sem quota ou incompatível. Use
+`minerador(fonte, q, pais, max_pages, limite)` para os nove conectores extras;
+acompanhe com `status(job, esperar=60)` e leia `minerador_resultados(job)`.
+Escolha pela rede e pelos filtros que o fornecedor realmente oferece. O
+volume de catálogo gera candidato, não prova anúncio ativo ou escala.
+
 **Meta:** `minerar(fonte="adheart", ...)` para descobrir; `minerar(q, pais)` → `status(job)` até `pronto`
 → `anuncios(job, destino)` para o bruto.
 
 **Google/YouTube:** `google(modo="descobrir", ...)` → `status(job)` → `google_resultados(job)`;
 `google(modo="dominio", q="<host>", pais)` para sondar a oferta. Com `video_id` ligado ao criativo,
 `youtube_video(ids)` mede views, data, não listado e canal. Salve a leitura em `meu/dados/`.
+Quando o VAV estiver autenticado, `minerador(fonte="vav", q="<hostname>", pais)`
+ajuda a ligar destino e vídeo. Sessão vencida é lacuna, não resultado negativo.
 
 Termos do nicho no idioma do país. Uma coleta por fonte por vez. Na Meta, `bloqueada=true` **não é
 contagem**: país encerrado por algumas horas, lacuna registrada. Enquanto roda, `status` mostra minutos e
