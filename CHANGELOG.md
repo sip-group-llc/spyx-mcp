@@ -1,5 +1,14 @@
 # Changelog
 
+## 2026-09-24 — Goals e critério de aceite
+
+- Os quatro Goals da base apontam para o modelo pessoal e para o roteamento
+  atual do MCP; versões curtas históricas não são copiadas diretamente em `/goal`.
+- O README resume as 14 ferramentas, dez mineradores, atualização do pacote e
+  as evidências necessárias para sustentar a conclusão de uma rodada.
+- Documentação e testes do contrato cobrem as fontes; a revisão das provas de
+  cada rodada ainda depende do agente e da pessoa, sem auditor automático.
+
 ## 2026-09-24 — revisão do roteamento e do ciclo
 
 - `planejar_fontes` relaciona os dez mineradores em cada recorte, com papel,

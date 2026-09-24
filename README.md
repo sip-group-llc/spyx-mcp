@@ -15,6 +15,30 @@ e opera em conversa: o motor coleta, o seu Claude audita com um critério já ca
 dá o veredito, e o que você aprende fica gravado em `.md` que só você edita. A base do operador chega por
 `git pull`; a sua nunca é sobrescrita.
 
+## Atualização de 24/09/2026
+
+O MCP agora expõe **14 ferramentas** e considera **dez mineradores credenciados**,
+além das bibliotecas públicas Meta e Google. `planejar_fontes` decide quais
+fontes servem para a rede e o país escolhidos; `fontes` mostra pré-requisitos e
+último teste; `minerador` consulta as fontes elegíveis; e
+`minerador_resultados` filtra um catálogo já coletado sem repetir a consulta.
+O VAV também permite descobrir por catálogo, leaderboard, canal e domínio.
+
+Os quatro Goals em `base/` têm critérios úteis, mas suas versões curtas e seus
+comandos locais são históricos. Para uma nova rodada, monte um Goal em
+`meu/goals/` pelo [modelo atual](meu/goals/GOAL-EXEMPLO.md), defina rede e país,
+aprove o texto final e siga [o ciclo do MCP](docs/ciclo.md). Depois de `git pull`,
+abra uma nova tarefa no Codex ou uma nova sessão no Claude Code para carregar as
+instruções atualizadas.
+
+**Qualidade da rodada:** o roteiro não garante encontrar as melhores ofertas de
+todo o mercado. A entrega deve mostrar a cobertura das buscas e a decisão para
+cada fonte, confirmar anúncio pago no país, destino e produto, e separar
+inventário de indícios de escala. Estes exigem duas leituras comparáveis com
+intervalo de pelo menos 24 horas. Candidatos sem essa prova ficam no ranking
+parcial, com links, datas e lacunas. Ainda não há um auditor automático que
+aprove ou reprove cada rodada por esses critérios.
+
 ## Em 30 segundos
 
 | | |
