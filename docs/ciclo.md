@@ -20,21 +20,32 @@ rodada anterior.
 
 ## 2. Minerar
 
-Comece com `fontes()` e [o mapa das fontes](fontes.md). Registre cada fonte
-pertinente como consultada, bloqueada, sem quota ou incompatível. Use
+Comece com `planejar_fontes(rede, pais, intencao="descobrir", alvo="<termo>")`
+e [o mapa das fontes](fontes.md). O plano relaciona os dez mineradores, inclusive
+os que ficam fora da rede. Registre cada fonte pertinente como consultada,
+bloqueada, sem quota ou dispensada com motivo. Use
 `minerador(fonte, q, pais, max_pages, limite)` para os nove conectores extras;
 acompanhe com `status(job, esperar=60)` e leia `minerador_resultados(job)`.
-Escolha pela rede e pelos filtros que o fornecedor realmente oferece. O
-volume de catálogo gera candidato, não prova anúncio ativo ou escala.
+Use `filtro`/`tipo`/`ordenar` para triar o resultado já coletado, sem nova busca.
+Escolha pela rede e pelos filtros que o fornecedor realmente oferece. O volume
+de catálogo gera candidato, não prova anúncio ativo ou escala.
 
-**Meta:** `minerar(fonte="adheart", ...)` para descobrir; `minerar(q, pais)` → `status(job)` até `pronto`
-→ `anuncios(job, destino)` para o bruto.
+**Meta:** Meta Ad Library por frase ampla, depois Tyver, Adyntel,
+Trendtrack e Foreplay por termo para ampliar descoberta. AmericanSwipe e
+MineraROI são catálogos sem filtro de país (MineraROI é priorizado no BR);
+AdHeart entra quando sua cota acrescentar
+cobertura útil. Abra a landing e confirme candidatos com `minerar(fonte="meta",
+q="<marca>", pais)` → `status(job, esperar=60)` → `anuncios(job, destino)`.
 
 **Google/YouTube:** `google(modo="descobrir", ...)` → `status(job)` → `google_resultados(job)`;
 `google(modo="dominio", q="<host>", pais)` para sondar a oferta. Com `video_id` ligado ao criativo,
-`youtube_video(ids)` mede views, data, não listado e canal. Salve a leitura em `meu/dados/`.
-Quando o VAV estiver autenticado, `minerador(fonte="vav", q="<hostname>", pais)`
-ajuda a ligar destino e vídeo. Sessão vencida é lacuna, não resultado negativo.
+`youtube_video(ids, pais)` mede views, data, não listado e canal. Passe o país do
+Goal explicitamente e salve a leitura em `meu/dados/`.
+Quando o VAV estiver autenticado, `modo="leaderboard"` (uma página) acha
+canais anunciantes, `modo="channel_id"` expõe seus anúncios e
+`minerador(fonte="vav", modo="dominio", q="<hostname>", pais)` liga destino
+e vídeo. Busca por canal ou domínio não filtra país.
+Sessão vencida é lacuna, não resultado negativo.
 
 Termos do nicho no idioma do país. Uma coleta por fonte por vez. Na Meta, `bloqueada=true` **não é
 contagem**: país encerrado por algumas horas, lacuna registrada. Enquanto roda, `status` mostra minutos e
@@ -61,7 +72,7 @@ reescreve frase. Um exemplo é hipótese; vira regra quando repete.
 ## 6. Medir
 
 Meta: `medir(job, chave)` → `scripts/escala_serie.py registrar-json`. YouTube: salve a resposta de
-`youtube_video(ids)` → `scripts/escala_serie.py registrar-youtube-json --de <arquivo> --oferta <host> --rodada Rnnn`.
+`youtube_video(ids, pais)` → `scripts/escala_serie.py registrar-youtube-json --de <arquivo> --oferta <host> --rodada Rnnn`.
 Ambos gravam a série em `meu/serie-escala.jsonl`.
 
 | Leituras | O que pode ser escrito |

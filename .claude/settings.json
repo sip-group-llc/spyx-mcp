@@ -2,6 +2,7 @@
   "enableAllProjectMcpServers": true,
   "permissions": {
     "allow": [
+      "mcp__hackingads__planejar_fontes",
       "mcp__hackingads__fontes",
       "mcp__hackingads__minerador",
       "mcp__hackingads__minerador_resultados",

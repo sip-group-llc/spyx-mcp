@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-09-24 — revisão do roteamento e do ciclo
+
+- `planejar_fontes` relaciona os dez mineradores em cada recorte, com papel,
+  filtro geográfico real, decisão e último teste, sem consumir quota.
+- Resultados de catálogo aceitam filtro e ordenação locais, evitando repetir
+  consulta paga para procurar um nicho entre centenas de linhas.
+- VAV expõe catálogo, leaderboard (página 1), nome/ID de canal e domínio;
+  a URL do vídeo é identificada como vídeo, sem fingir ser landing.
+- O Goal de exemplo e a rodada de exemplo seguem as tools atuais e registram
+  cobertura por fonte. Jobs interrompidos por reinício são identificados sem
+  repetição automática.
+
 ## 2026-09-24 — todos os conectores no MCP
 
 - `fontes` inventaria dez mineradores credenciados e as bibliotecas Meta/Google, distinguindo

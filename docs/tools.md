@@ -6,7 +6,7 @@ Gerado de `mcp_minerador.py` por `gerar_docs.py` — não edite à mão.
 
 ## `minerar(q: string, pais?: string, fonte?: string, search_type?: string, max_rodadas?: integer, nicho?: string, max_pages?: integer, last_active?: integer, sort?: string)`
 
-Coleta anúncios NO AR agora. Duas fontes com papéis diferentes: `fonte="adheart"` = DESCOBRIR os mais escalados do nicho: busca por termo (q = termos amplos separados por vírgula, pais = br/de/us…), `sort="total_reach"` (alcance, o default) ou `"creation_date"` (recentes); GASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra no acervo até adheart(acao="aprovar"). `fonte="meta"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job` — status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por termo de volume, alterne país entre buscas.
+Coleta anúncios NO AR agora. Duas fontes com papéis diferentes: `fonte="adheart"` = DESCOBRIR candidatos no catálogo: busca por termo (q = termos amplos separados por vírgula, pais = br/de/us…), `sort="total_reach"` (alcance acumulado estimado, o default) ou `"creation_date"` (recentes); GASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra no acervo até adheart(acao="aprovar"). `fonte="meta"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job` — status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por termo de volume, alterne país entre buscas.
 
 ## `google(q: string, pais?: string, modo?: string, max_pages?: integer, max_anunciantes?: integer, max_videos?: integer)`
 
@@ -20,17 +20,21 @@ Resultados de google() paginados por anunciante/domínio, com IDs de vídeos e c
 
 Inventário das dez fontes credenciadas e das bibliotecas Meta/Google. `pre_requisitos_presentes` confirma apenas arquivos e nomes de credencial; consulte um job limitado antes de afirmar que a sessão, assinatura, quota ou resposta do fornecedor funcionam.
 
-## `minerador(fonte: string, q?: string, pais?: string, max_pages?: integer, limite?: integer)`
+## `planejar_fontes(rede: string, pais: string, intencao?: string, alvo?: string)`
 
-Consulta limitada de AmericanSwipe, VAV, Anstrex, Trendtrack, MineraROI, Foreplay, Adyntel, Tyver ou SpyHouse. Cada fonte mantém sua capacidade real: VAV aceita domínio ou catálogo YouTube; AmericanSwipe, Anstrex e MineraROI são catálogos; Foreplay não filtra país. Devolve job: use status(job, esperar=60) e minerador_resultados(job). O resultado fica privado por pessoa, sem publicação automática no acervo. Catálogo não confirma veiculação atual.
+Planeja sem coleta e sem custo: Meta, YouTube, ambas, native ou push; descobrir ou validar um hostname. Devolve as dez fontes credenciadas como usar, condicional ou fora do recorte, mais bibliotecas públicas, capacidades e último teste da pessoa. Use no início de cada rodada e registre a decisão de cada fonte. Acesso anterior não garante sessão atual; `volume_catalogo` não é escala nem substitui confirmação na biblioteca pública.
 
-## `minerador_resultados(job: string, pagina?: integer, por_pagina?: integer)`
+## `minerador(fonte: string, q?: string, pais?: string, max_pages?: integer, limite?: integer, modo?: string)`
 
-Resultado paginado de minerador(job), com fonte, horário, cobertura, links e métricas de catálogo rotuladas. Não devolve o bruto nem converte volume do fornecedor em escala.
+Consulta limitada de AmericanSwipe, VAV, Anstrex, Trendtrack, MineraROI, Foreplay, Adyntel, Tyver ou SpyHouse. VAV: modo catalogo, dominio (q=hostname), canal (q=nome), channel_id (q=id) ou leaderboard (uma página); modo vazio escolhe domínio quando q existe e catálogo quando não. AmericanSwipe, Anstrex e MineraROI são catálogos; Foreplay não filtra país. Devolve job: use status(job, esperar=60) e minerador_resultados(job). O resultado fica privado por pessoa, sem publicação automática no acervo. Catálogo não confirma veiculação atual.
+
+## `minerador_resultados(job: string, pagina?: integer, por_pagina?: integer, filtro?: string, tipo?: string, ordenar?: string)`
+
+Resultado paginado de minerador(job). `filtro` busca no resultado já coletado, sem gastar nova cota; útil para catálogos grandes sem busca nativa. `tipo` = oferta|criativo|video|canal; `ordenar` = original|volume_catalogo|subindo|recente. Volume e `subindo` são sinais do fornecedor, nunca escala confirmada. Devolve bruto e filtrado como contagens separadas.
 
 ## `youtube_video(ids: string, pais?: string)`
 
-Lê 1–3 vídeos públicos do YouTube por video_id: views, publicação, não listado, canal e inscritos, com horário UTC. A leitura isolada é inventário; repita os mesmos IDs após >=24h para medir views/dia. Um ID vindo do ATC liga o vídeo a anúncio pago; views sozinhas não provam entrega paga nem vendas.
+Lê 1–3 vídeos públicos do YouTube por video_id: views, publicação, não listado, canal e inscritos, com horário UTC. Passe `pais` do Goal explicitamente; o default US existe só por compatibilidade. A leitura isolada é inventário; repita os mesmos IDs após >=24h para medir views/dia. Um ID vindo do ATC liga o vídeo a anúncio pago; views sozinhas não provam entrega paga nem vendas.
 
 ## `paginas(q: string, pais?: string)`
 

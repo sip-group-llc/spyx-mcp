@@ -13,6 +13,10 @@ Enviar parâmetros (“Estados Unidos”, por exemplo) resolve a lacuna, mas nã
 
 ## Durante a rodada
 
+- `planejar_fontes` relaciona os dez mineradores pelo recorte aprovado. Na rodada,
+  anote fonte elegível consultada, bloqueada, sem quota ou dispensada com motivo;
+  não substitua uma rede ausente por outra em silêncio. Catálogo sem filtro de país
+  ou termo exige triagem local e confirmação independente.
 - Trabalhe no país/rede aprovados. Salve respostas do MCP em `meu/dados/`; não confunda URL técnica da prévia com landing nem anunciante, domínio, anúncio e oferta.
 - Antes de encerrar a descoberta, confira `cobertura`, termos solicitados/consultados, sugestões sem sondagem, anunciantes distintos, `video_id` distintos, vídeos lidos e vídeos ainda sem leitura. Priorize por aderência ao nicho e recência; investigue os candidatos plausíveis que ainda podem mudar a conclusão. Se uma limitação impedir o restante, registre-a como cobertura parcial.
 - Em YouTube, leia vídeos dos anunciantes plausíveis para identificar produto, canal e audiência mesmo quando o destino ainda for hipótese. Views acumuladas e poucos/muitos criativos não provam escala. Para uma oferta atribuída, grave D+0 e repita o mesmo vídeo após ≥24 horas antes de falar em crescimento.
