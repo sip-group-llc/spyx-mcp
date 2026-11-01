@@ -52,9 +52,16 @@ antigo de mineração; ela não dá acesso às funções de conta. Uma chave `ar
 ganha automaticamente acesso aos coletores legados. Não vincule identidades por
 nome nem peça a chave global do operador.
 
-A fila da conta tem executores implementados para AdHeart e Foreplay. O Foreplay
+A fila da conta tem executores implementados para AdHeart, Foreplay e Tyver. O Foreplay
 reserva créditos por anúncio e depende de orçamento e ativação pelo operador;
-implementado não significa disponível na sua conta agora. As demais fontes ainda
+implementado não significa disponível na sua conta agora. O Tyver reserva
+60 views por página solicitada, pois o limite de resultados não reduz o tamanho
+da página do fornecedor. Um recibo confirmado libera somente as páginas não
+executadas; esse valor é conservador, não uma medição do débito efetivo.
+Tyver exige orçamento e janela fixa autorizados pelo operador; seu saldo não
+informa a data do ciclo. Reinício não renova o orçamento nem repete pesquisa
+cuja resposta ficou incerta. Sem ativação e capacidade válida, a fila recusa a fonte.
+As demais fontes ainda
 precisam de adaptadores e confirmação de capacidade para esse fluxo. A existência
 de uma ferramenta ou fonte no catálogo não comprova sessão válida, saldo ou
 disponibilidade atual. Se a política indicar indisponível, pare e informe o motivo.
