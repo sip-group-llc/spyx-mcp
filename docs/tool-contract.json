@@ -549,7 +549,7 @@
   },
   {
     "name": "minerar",
-    "description": "Coleta anúncios NO AR agora. Duas fontes com papéis diferentes:\n`fonte=\"adheart\"` = DESCOBRIR candidatos no catálogo: busca por termo (q = termos amplos separados\npor vírgula, pais = br/de/us…), `sort=\"total_reach\"` (alcance acumulado estimado, o default) ou `\"creation_date\"` (recentes);\nGASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra\nno acervo até adheart(acao=\"aprovar\").\n`fonte=\"meta\"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job`\n— status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por\ntermo de volume, alterne país entre buscas.",
+    "description": "Coleta anúncios NO AR agora. Duas fontes com papéis diferentes:\n`fonte=\"adheart\"` = DESCOBRIR candidatos no catálogo: busca por termo (q = termos amplos separados\npor vírgula, pais = br/de/us…), `sort=\"total_reach\"` (alcance acumulado estimado, o default) ou `\"creation_date\"` (recentes);\nGASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra\nno acervo até adheart(acao=\"aprovar\").\n`fonte=\"meta\"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job`\n— status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por\ntermo de volume, alterne país entre buscas. Limites por chamada: até 8 páginas\nAdHeart ou até 80 rodadas Meta. Esses tetos não substituem quota disponível.",
     "inputSchema": {
       "properties": {
         "q": {

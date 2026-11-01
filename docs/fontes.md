@@ -53,6 +53,11 @@ campo do fornecedor em atividade atual. Leia `total_bruto` e `total` para não
 confundir filtro local com cobertura da busca original.
 No AmericanSwipe, `limite` controla quantas ofertas recebem detalhes; cada
 página ainda pode trazer até 500 ofertas e 500 criativos, paginados na resposta.
+No Tyver, `limite` recorta a saída e não altera o tamanho da página do fornecedor:
+uma chamada pode retornar até 60 criativos e consumir até 60 views, conforme
+o tipo de busca. Repetir a mesma página pode consumir novamente. Reserve pelo
+pior caso e não interprete `limite=1` como custo de uma view. Veja o
+[contrato oficial do Tyver](https://api.tyver.io/public/v1/openapi.json).
 No VAV, `modo="catalogo", q=""` lê anúncios por país; `modo="leaderboard",
 q="", max_pages=1` traz canais anunciantes; `modo="channel_id", q="<id>"`
 abre os anúncios de um canal; `modo="dominio", q="<hostname>"` liga destino
@@ -63,6 +68,12 @@ essa resposta, que permanece paginada em `minerador_resultados`.
 O bruto e as credenciais ficam no servidor; o resultado paginado pertence só à
 pessoa que iniciou o job. Resultados de catálogo não entram automaticamente no
 acervo.
+
+Use o identificador de job exatamente como foi retornado. Consultas legadas
+aceitam até 300 caracteres em uma linha; AdHeart permite 1–8 páginas por chamada
+e Meta, 1–80 rodadas. Esses são limites de segurança, não uma reserva de quota
+nem uma autorização para consumir tudo. A fila de conta descrita em
+[conta.md](conta.md) possui controles próprios de créditos e capacidade.
 
 ## O que vira candidato forte
 
