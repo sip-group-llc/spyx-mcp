@@ -23,7 +23,8 @@ configure sua chave pessoal `ar_` e comece por `conta_identidade`.
 Veja [como usar sua conta](docs/conta.md), incluindo os custos, a chave de
 idempotência e as diferenças entre a conta e os acessos legados.
 
-A fila da conta tem executor implementado para AdHeart; as demais fontes ainda
+A fila da conta tem executores implementados para AdHeart e Foreplay, sujeitos
+a orçamento, ativação operacional e capacidade válida. As demais fontes ainda
 dependem de adaptadores e capacidade validada. A publicação do contrato não é
 garantia de disponibilidade de todas as fontes. O servidor recusa chaves inválidas
 e não empresta a identidade do operador. As cinco novas ferramentas de escrita

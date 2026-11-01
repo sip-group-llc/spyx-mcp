@@ -52,7 +52,9 @@ antigo de mineração; ela não dá acesso às funções de conta. Uma chave `ar
 ganha automaticamente acesso aos coletores legados. Não vincule identidades por
 nome nem peça a chave global do operador.
 
-A fila da conta tem executor implementado para AdHeart. As demais fontes ainda
+A fila da conta tem executores implementados para AdHeart e Foreplay. O Foreplay
+reserva créditos por anúncio e depende de orçamento e ativação pelo operador;
+implementado não significa disponível na sua conta agora. As demais fontes ainda
 precisam de adaptadores e confirmação de capacidade para esse fluxo. A existência
 de uma ferramenta ou fonte no catálogo não comprova sessão válida, saldo ou
 disponibilidade atual. Se a política indicar indisponível, pare e informe o motivo.
