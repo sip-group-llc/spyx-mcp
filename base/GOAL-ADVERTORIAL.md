@@ -32,7 +32,7 @@ PARÂMETROS. REGIÃO ou NICHO vazios nas duas últimas linhas: fazer UMA pergunt
 
 O PADRÃO. Anúncio que não parece anúncio: história em primeira pessoa, persona com nome e profissão, número clínico concreto, antes/depois, "meu médico disse". Várias Páginas-persona (médico, paciente, diário) apontando para o MESMO destino. Página sem seguidor, criada para anunciar. Referência (20/09/2026): haferloewe.de 504 IDs, gesundgelesen.com 258, gentilia.it 162 (3 personas), myavellis.com 132 (2 personas, site cloakeado).
 
-Trabalhar em D:/Projetos/HackingAds. Antes de buscar, ler projeto/treinamento/GOAL-ADVERTORIAL.md (procedimento completo), CRITERIOS.md inteiro, OFERTAS-MAPEADAS.md, README.md do treinamento e as três últimas rodadas.
+Trabalhar em D:/Projetos/Spy X. Antes de buscar, ler projeto/treinamento/GOAL-ADVERTORIAL.md (procedimento completo), CRITERIOS.md inteiro, OFERTAS-MAPEADAS.md, README.md do treinamento e as três últimas rodadas.
 
 EXCLUSÃO. Cruzar /meus (solaris, paginação completa), favoritas, utilizadas e OFERTAS-MAPEADAS. Excluir por identidade: nome, aliases, produtor, domínio, produto, entregável. Persona nova da mesma operação NÃO é oferta nova: conferir o destino.
 

@@ -7,8 +7,8 @@ root = Path(__file__).resolve().parents[1]
 tools = (root / "docs/tools.md").read_text(encoding="utf-8")
 documented = set(re.findall(r"^## `([a-z_]+)\(", tools, re.M))
 settings = json.loads((root / ".claude/settings.json").read_text(encoding="utf-8"))
-allowed = {item.removeprefix("mcp__hackingads__") for item in settings["permissions"]["allow"]
-           if item.startswith("mcp__hackingads__")}
+allowed = {item.removeprefix("mcp__spyx__") for item in settings["permissions"]["allow"]
+           if item.startswith("mcp__spyx__")}
 sources = (root / "docs/fontes.md").read_text(encoding="utf-8").casefold()
 errors = []
 account_writes = {"registrar_acao", "julgar_oferta", "treinar_modelo", "coleta_solicitar", "coleta_cancelar"}

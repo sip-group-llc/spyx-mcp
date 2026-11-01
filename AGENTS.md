@@ -1,4 +1,4 @@
-# HackingAds MCP — instruções para Codex
+# Spy X MCP — instruções para Codex
 
 Leia `CLAUDE.md` para o ciclo e `docs/goal-preflight.md` quando o pedido envolver preparar, ativar ou executar uma rodada. A base do operador fica em `base/` e é somente leitura; dados, goals, descobertas e rodadas da pessoa ficam em `meu/`.
 

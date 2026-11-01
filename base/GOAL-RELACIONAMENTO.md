@@ -29,7 +29,7 @@ PARÂMETRO. REGIÃO vazia: UMA pergunta, nada de busca antes. NICHO fixo: relaci
 
 O PADRÃO, JÁ MEDIDO NESTE NICHO (R017): quiz.eroscode.de 598 IDs/5 personas (homens 30+, 59 € único); quiz.musesacademy.io 541/8 (mulheres, assinatura, 1 ano no Google); celestevalmont.com 446/7 (astrologia, uma persona por idioma, 240 >30d). Marca sem rosto, Páginas com nome de pessoa e 1–350 seguidores, quiz como porta, preço atrás do quiz. É isso, em operações NOVAS.
 
-Trabalhar em D:/Projetos/HackingAds. Antes de buscar, ler GOAL-RELACIONAMENTO.md (procedimento completo), CRITERIOS.md inteiro, OFERTAS-MAPEADAS.md, README.md e R017–R018.
+Trabalhar em D:/Projetos/Spy X. Antes de buscar, ler GOAL-RELACIONAMENTO.md (procedimento completo), CRITERIOS.md inteiro, OFERTAS-MAPEADAS.md, README.md e R017–R018.
 
 EXCLUSÃO. Cruzar /meus (solaris), favoritas, utilizadas e OFERTAS-MAPEADAS por identidade (nome, aliases, produtor, domínio, produto, entregável). Persona nova da mesma operação NÃO é oferta nova: conferir destino e e-mail do perfil. Já mapeadas: ErosCode, Muses Academy, Céleste Valmont, ilsegretodellariconquista, Liebesschicksal, Couples Therapy workbooks, BetterMe Relationship, nuclever.fr, protocolodelreconquista.
 
