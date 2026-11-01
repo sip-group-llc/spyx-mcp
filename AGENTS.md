@@ -2,6 +2,12 @@
 
 Leia `CLAUDE.md` para o ciclo e `docs/goal-preflight.md` quando o pedido envolver preparar, ativar ou executar uma rodada. A base do operador fica em `base/` e é somente leitura; dados, goals, descobertas e rodadas da pessoa ficam em `meu/`.
 
+Para as ferramentas de conta, leia `docs/conta.md` e confirme `conta_identidade`
+antes de qualquer escrita. Não peça chaves ou senhas na conversa: a pessoa deve
+configurá-las no cliente. Reserva de créditos exige autorização de gasto; timeout
+não autoriza repetir a coleta com outra chave de idempotência. Uma recusa de
+acesso não autoriza usar credenciais de operador ou inferir vínculo por nome.
+
 ## Trava antes de um Goal
 
 Um pedido de mineração ou um texto de goal enviado em conversa é **rascunho**. Antes de criar/ativar um Goal, produzir texto para `/goal` ou iniciar coleta, confira os campos e faça o pré-voo de `docs/goal-preflight.md`. Pergunte pelos campos essenciais ausentes; com o escopo completo, mostre o texto exato e espere a aprovação explícita da pessoa. Não interprete silêncio, resposta sobre parâmetros ou o simples envio do rascunho como aprovação. Depois de aprovado, execute o fluxo sem microconfirmações.

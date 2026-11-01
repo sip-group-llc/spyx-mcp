@@ -11,10 +11,19 @@ allowed = {item.removeprefix("mcp__hackingads__") for item in settings["permissi
            if item.startswith("mcp__hackingads__")}
 sources = (root / "docs/fontes.md").read_text(encoding="utf-8").casefold()
 errors = []
-if documented != allowed:
-    errors.append("docs/tools.md e permissões Claude têm tools diferentes")
-if len(documented) != 14:
-    errors.append(f"tools documentadas: {len(documented)}, esperado 14")
+account_writes = {"registrar_acao", "julgar_oferta", "treinar_modelo", "coleta_solicitar", "coleta_cancelar"}
+if documented - account_writes != allowed or account_writes & allowed:
+    errors.append("permissões devem incluir leituras e legado, sem aprovar automaticamente as novas escritas")
+if len(documented) != 34:
+    errors.append(f"tools documentadas: {len(documented)}, esperado 34")
+contract = json.loads((root / "docs/tool-contract.json").read_text(encoding="utf-8"))
+if {item["name"] for item in contract} != documented:
+    errors.append("snapshot do contrato difere da documentação")
+for item in contract:
+    if {"api_key", "password", "token", "user_id"} & set(item["inputSchema"].get("properties", {})):
+        errors.append(f"credencial ou identidade em argumento público: {item['name']}")
+    if item["name"] in account_writes and item.get("annotations", {}).get("readOnlyHint") is not False:
+        errors.append(f"escrita sem anotação correspondente: {item['name']}")
 for source in ("adheart", "americanswipe", "vav", "anstrex", "trendtrack", "mineraroi",
                "foreplay", "adyntel", "tyver", "spyhouse"):
     if source not in sources:
@@ -32,7 +41,7 @@ for goal in sorted((root / "base").glob("GOAL-*.md")):
     ):
         errors.append(f"Goal histórico sem aviso de cópia: {goal.name}")
 active_docs = ("README.md", "AGENTS.md", "CLAUDE.md", "docs/ciclo.md", "docs/fontes.md",
-               "docs/goal-preflight.md", "docs/rodada-exemplo.md", "meu/goals/GOAL-EXEMPLO.md")
+               "docs/goal-preflight.md", "docs/rodada-exemplo.md", "docs/conta.md", "meu/goals/GOAL-EXEMPLO.md")
 for name in active_docs:
     doc = root / name
     content = doc.read_text(encoding="utf-8")
@@ -45,10 +54,10 @@ for name in active_docs:
         if not (doc.parent / path).exists():
             errors.append(f"link local ausente: {name} → {path}")
 readme = (root / "README.md").read_text(encoding="utf-8")
-if "14%20tools" not in readme:
+if "34%20tools" not in readme:
     errors.append("badge README não acompanha a quantidade de tools")
 if errors:
     for error in errors:
         print("FAIL", error)
     raise SystemExit(1)
-print("ok — 14 tools, permissões, dez fontes e roteamento nos guias")
+print("ok — 34 tools, novas escritas sem aprovação automática, dez fontes e roteamento nos guias")

@@ -3,7 +3,7 @@
 <p align="center"><img src="docs/img/hero.svg" alt="anúncios minerados: quiz com persona, atribuição, série de escala" width="100%"></p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/motor-MCP%20remoto%20%C2%B7%2014%20tools-e5484d?style=flat-square" alt="motor">
+<img src="https://img.shields.io/badge/motor-MCP%20remoto%20%C2%B7%2034%20tools-e5484d?style=flat-square" alt="motor">
 <img src="https://img.shields.io/badge/base-local%20%C2%B7%20.md%20editados%20pelo%20seu%20Claude-3fb950?style=flat-square" alt="base">
 <img src="https://img.shields.io/badge/fontes-10%20mineradores%20%C2%B7%20Meta%20%C2%B7%20Google-2f81f7?style=flat-square" alt="fontes">
 <img src="https://img.shields.io/badge/regra-escala%20%3D%202%20leituras%20%E2%89%A5%2024h-d29922?style=flat-square" alt="regra">
@@ -15,9 +15,23 @@ e opera em conversa: o motor coleta, o seu Claude audita com um critério já ca
 dá o veredito, e o que você aprende fica gravado em `.md` que só você edita. A base do operador chega por
 `git pull`; a sua nunca é sobrescrita.
 
-## Atualização de 24/09/2026
+## Conta Arasaka — atualização de 31/10/2026
 
-O MCP agora expõe **14 ferramentas** e considera **dez mineradores credenciados**,
+O endpoint agora anuncia **34 ferramentas**: as 14 do fluxo legado e 20 para
+conta, créditos, acervo, ranking, preferências e fila de coleta. Para as novas,
+configure sua chave pessoal `ar_` e comece por `conta_identidade`.
+Veja [como usar sua conta](docs/conta.md), incluindo os custos, a chave de
+idempotência e as diferenças entre a conta e os acessos legados.
+
+A fila da conta tem executor implementado para AdHeart; as demais fontes ainda
+dependem de adaptadores e capacidade validada. A publicação do contrato não é
+garantia de disponibilidade de todas as fontes. O servidor recusa chaves inválidas
+e não empresta a identidade do operador. As cinco novas ferramentas de escrita
+não foram incluídas na lista de aprovação automática do cliente.
+
+## Histórico do fluxo legado — 24/09/2026
+
+O fluxo legado expõe **14 ferramentas** e considera **dez mineradores credenciados**,
 além das bibliotecas públicas Meta e Google. `planejar_fontes` decide quais
 fontes servem para a rede e o país escolhidos; `fontes` mostra pré-requisitos e
 último teste; `minerador` consulta as fontes elegíveis; e
@@ -44,7 +58,7 @@ aprove ou reprove cada rodada por esses critérios.
 | | |
 |---|---|
 | **O que é** | um motor que descobre ofertas e mede indícios de escala, separando *inventário* de *escala* e *anúncio* de *oferta* |
-| **O que você precisa** | Codex ou Claude Code, git, Python 3 e a chave do operador |
+| **O que você precisa** | um cliente MCP, git, Python 3 e sua chave individual: `ar_` para a conta ou a chave legada para o fluxo anterior |
 | **O que você não precisa** | conta em fonte nenhuma, proxy, infraestrutura: tudo isso mora no motor, atrás da chave |
 | **O que fica com você** | goals, critério, rodadas, avaliações e séries em `meu/`, na sua máquina |
 

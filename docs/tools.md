@@ -4,6 +4,86 @@ Gerado de `mcp_minerador.py` por `gerar_docs.py` — não edite à mão.
 
 `?` marca argumento opcional. Toda tool exige a sua chave no header `Authorization`.
 
+## `conta_identidade()`
+
+Confirma a conta da chave pessoal ar_ deste conector. Não associa por nome nem usa chave do operador.
+
+## `conta_saldo()`
+
+Créditos disponíveis, reservados e consumidos da sua conta; não compra nem renova plano.
+
+## `conta_extrato(limite?: integer)`
+
+Últimos lançamentos de créditos da sua conta, até 100.
+
+## `acervo_buscar(idioma?: string, rede?: string, nicho?: string, escalando?: boolean, ativas?: boolean, top?: integer, offset?: integer)`
+
+Pesquisa o acervo existente, sem coleta paga. Filtros e paginação explícitos; sinais do fornecedor não provam vendas/escala.
+
+## `acervo_oferta(chave: string)`
+
+Dossiê de uma oferta do acervo pela chave/domínio retornado na pesquisa. Não visita URLs fornecidas.
+
+## `acervo_criativos(oferta?: string, idioma?: string, rede?: string, nicho?: string, com_views?: boolean, top?: integer, offset?: integer)`
+
+Criativos já coletados, com preview e views quando medidas. oferta usa raw.id da oferta; null não significa zero.
+
+## `acervo_facetas()`
+
+Valores e contagens disponíveis para filtrar idioma, rede, nicho e fonte no acervo.
+
+## `acervo_fontes()`
+
+Ofertas existentes por fonte. Inventário do acervo não comprova acesso atual ao fornecedor.
+
+## `ranking(top?: integer, offset?: integer, nao_julgadas?: boolean, idioma?: string, rede?: string, nicho?: string, fonte?: string, com_volume?: boolean, ordenar?: string, explorar?: number, incluir_paradas?: boolean)`
+
+Ranking personalizado da sua conta, com filtros e paginação. A API informa se o modelo ainda é preliminar.
+
+## `registrar_acao(chave: string, acao: string, valor?: string)`
+
+Registra sua ação. usou exige domínio da SUA versão; resultado aceita pagou/nao_pagou/rodando. Não invente resultado comercial.
+
+## `julgar_oferta(chave: string, bom: boolean, nota?: string)`
+
+Registra seu julgamento e motivo; atualiza somente o modelo da sua conta.
+
+## `minhas_ofertas(incluir_descurtidas?: boolean, top?: integer)`
+
+Suas ofertas e ações registradas; não lê o histórico de outra pessoa.
+
+## `minhas_pendencias()`
+
+Ofertas que você marcou como usadas e ainda não tiveram resultado declarado.
+
+## `meu_relatorio()`
+
+Seu histórico de ações, funil e aprendizado do ranking; não prova lucro ou atribuição de vendas.
+
+## `treinar_modelo()`
+
+Recalcula seu modelo com seus julgamentos existentes. Não gera anúncios, não chama IA paga.
+
+## `coleta_politica()`
+
+Custos, fontes, limites e disponibilidade confirmada da fila da sua conta. Leia antes de solicitar coleta.
+
+## `coleta_solicitar(fonte: string, q: string, chave_idempotencia: string, pais?: string, max_paginas?: integer, limite?: integer)`
+
+Solicita coleta COM RESERVA DE CRÉDITOS. Requer consentimento de gasto e política disponível. Reuse a mesma chave somente para repetir o MESMO pedido após dúvida de entrega; não há retry automático.
+
+## `coletas()`
+
+Lista somente as coletas da sua conta, para acompanhar ou resolver resultado incerto.
+
+## `coleta_consultar(job: string)`
+
+Consulta estado e resultados da sua coleta. Job de outra pessoa é recusado pela API.
+
+## `coleta_cancelar(job: string)`
+
+Solicita cancelamento da sua coleta. A API decide reserva/reembolso; trabalho já enviado pode ficar incerto.
+
 ## `minerar(q: string, pais?: string, fonte?: string, search_type?: string, max_rodadas?: integer, nicho?: string, max_pages?: integer, last_active?: integer, sort?: string)`
 
 Coleta anúncios NO AR agora. Duas fontes com papéis diferentes: `fonte="adheart"` = DESCOBRIR candidatos no catálogo: busca por termo (q = termos amplos separados por vírgula, pais = br/de/us…), `sort="total_reach"` (alcance acumulado estimado, o default) ou `"creation_date"` (recentes); GASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra no acervo até adheart(acao="aprovar"). `fonte="meta"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job` — status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por termo de volume, alterne país entre buscas.
@@ -58,6 +138,6 @@ REGRA PRIMORDIAL: a leitura de um job pronto para o destino `chave` (hostname), 
 
 ## `adheart(acao: string, staging_id: string)`
 
-Fecha uma busca AdHeart: `aprovar` baixa o staging para o acervo (aí entra no ranking); `descartar` apaga.
+Fecha a própria busca AdHeart: `aprovar` baixa o staging para o acervo; `descartar` apaga. Stagings de outra pessoa ou antigos sem vínculo registrado exigem revisão do operador.
 
 # Prompt

@@ -1,0 +1,979 @@
+[
+  {
+    "name": "conta_identidade",
+    "description": "Confirma a conta da chave pessoal ar_ deste conector. Não associa por nome nem usa chave do operador.",
+    "inputSchema": {
+      "properties": {},
+      "title": "conta_identidadeArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "conta_saldo",
+    "description": "Créditos disponíveis, reservados e consumidos da sua conta; não compra nem renova plano.",
+    "inputSchema": {
+      "properties": {},
+      "title": "conta_saldoArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "conta_extrato",
+    "description": "Últimos lançamentos de créditos da sua conta, até 100.",
+    "inputSchema": {
+      "properties": {
+        "limite": {
+          "default": 50,
+          "title": "Limite",
+          "type": "integer"
+        }
+      },
+      "title": "conta_extratoArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "acervo_buscar",
+    "description": "Pesquisa o acervo existente, sem coleta paga. Filtros e paginação explícitos; sinais do fornecedor não provam vendas/escala.",
+    "inputSchema": {
+      "properties": {
+        "idioma": {
+          "default": "",
+          "title": "Idioma",
+          "type": "string"
+        },
+        "rede": {
+          "default": "",
+          "title": "Rede",
+          "type": "string"
+        },
+        "nicho": {
+          "default": "",
+          "title": "Nicho",
+          "type": "string"
+        },
+        "escalando": {
+          "default": false,
+          "title": "Escalando",
+          "type": "boolean"
+        },
+        "ativas": {
+          "default": false,
+          "title": "Ativas",
+          "type": "boolean"
+        },
+        "top": {
+          "default": 30,
+          "title": "Top",
+          "type": "integer"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        }
+      },
+      "title": "acervo_buscarArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "acervo_oferta",
+    "description": "Dossiê de uma oferta do acervo pela chave/domínio retornado na pesquisa. Não visita URLs fornecidas.",
+    "inputSchema": {
+      "properties": {
+        "chave": {
+          "title": "Chave",
+          "type": "string"
+        }
+      },
+      "required": [
+        "chave"
+      ],
+      "title": "acervo_ofertaArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "acervo_criativos",
+    "description": "Criativos já coletados, com preview e views quando medidas. oferta usa raw.id da oferta; null não significa zero.",
+    "inputSchema": {
+      "properties": {
+        "oferta": {
+          "default": "",
+          "title": "Oferta",
+          "type": "string"
+        },
+        "idioma": {
+          "default": "",
+          "title": "Idioma",
+          "type": "string"
+        },
+        "rede": {
+          "default": "",
+          "title": "Rede",
+          "type": "string"
+        },
+        "nicho": {
+          "default": "",
+          "title": "Nicho",
+          "type": "string"
+        },
+        "com_views": {
+          "default": false,
+          "title": "Com Views",
+          "type": "boolean"
+        },
+        "top": {
+          "default": 30,
+          "title": "Top",
+          "type": "integer"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        }
+      },
+      "title": "acervo_criativosArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "acervo_facetas",
+    "description": "Valores e contagens disponíveis para filtrar idioma, rede, nicho e fonte no acervo.",
+    "inputSchema": {
+      "properties": {},
+      "title": "acervo_facetasArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "acervo_fontes",
+    "description": "Ofertas existentes por fonte. Inventário do acervo não comprova acesso atual ao fornecedor.",
+    "inputSchema": {
+      "properties": {},
+      "title": "acervo_fontesArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "ranking",
+    "description": "Ranking personalizado da sua conta, com filtros e paginação. A API informa se o modelo ainda é preliminar.",
+    "inputSchema": {
+      "properties": {
+        "top": {
+          "default": 30,
+          "title": "Top",
+          "type": "integer"
+        },
+        "offset": {
+          "default": 0,
+          "title": "Offset",
+          "type": "integer"
+        },
+        "nao_julgadas": {
+          "default": true,
+          "title": "Nao Julgadas",
+          "type": "boolean"
+        },
+        "idioma": {
+          "default": "",
+          "title": "Idioma",
+          "type": "string"
+        },
+        "rede": {
+          "default": "",
+          "title": "Rede",
+          "type": "string"
+        },
+        "nicho": {
+          "default": "",
+          "title": "Nicho",
+          "type": "string"
+        },
+        "fonte": {
+          "default": "",
+          "title": "Fonte",
+          "type": "string"
+        },
+        "com_volume": {
+          "default": false,
+          "title": "Com Volume",
+          "type": "boolean"
+        },
+        "ordenar": {
+          "default": "nota",
+          "enum": [
+            "nota",
+            "escala"
+          ],
+          "title": "Ordenar",
+          "type": "string"
+        },
+        "explorar": {
+          "default": 0.2,
+          "title": "Explorar",
+          "type": "number"
+        },
+        "incluir_paradas": {
+          "default": false,
+          "title": "Incluir Paradas",
+          "type": "boolean"
+        }
+      },
+      "title": "rankingArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "registrar_acao",
+    "description": "Registra sua ação. usou exige domínio da SUA versão; resultado aceita pagou/nao_pagou/rodando. Não invente resultado comercial.",
+    "inputSchema": {
+      "properties": {
+        "chave": {
+          "title": "Chave",
+          "type": "string"
+        },
+        "acao": {
+          "enum": [
+            "curtiu",
+            "descurtiu",
+            "usou",
+            "resultado"
+          ],
+          "title": "Acao",
+          "type": "string"
+        },
+        "valor": {
+          "default": "",
+          "title": "Valor",
+          "type": "string"
+        }
+      },
+      "required": [
+        "chave",
+        "acao"
+      ],
+      "title": "registrar_acaoArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "julgar_oferta",
+    "description": "Registra seu julgamento e motivo; atualiza somente o modelo da sua conta.",
+    "inputSchema": {
+      "properties": {
+        "chave": {
+          "title": "Chave",
+          "type": "string"
+        },
+        "bom": {
+          "title": "Bom",
+          "type": "boolean"
+        },
+        "nota": {
+          "default": "",
+          "title": "Nota",
+          "type": "string"
+        }
+      },
+      "required": [
+        "chave",
+        "bom"
+      ],
+      "title": "julgar_ofertaArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "minhas_ofertas",
+    "description": "Suas ofertas e ações registradas; não lê o histórico de outra pessoa.",
+    "inputSchema": {
+      "properties": {
+        "incluir_descurtidas": {
+          "default": false,
+          "title": "Incluir Descurtidas",
+          "type": "boolean"
+        },
+        "top": {
+          "default": 100,
+          "title": "Top",
+          "type": "integer"
+        }
+      },
+      "title": "minhas_ofertasArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "minhas_pendencias",
+    "description": "Ofertas que você marcou como usadas e ainda não tiveram resultado declarado.",
+    "inputSchema": {
+      "properties": {},
+      "title": "minhas_pendenciasArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "meu_relatorio",
+    "description": "Seu histórico de ações, funil e aprendizado do ranking; não prova lucro ou atribuição de vendas.",
+    "inputSchema": {
+      "properties": {},
+      "title": "meu_relatorioArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "treinar_modelo",
+    "description": "Recalcula seu modelo com seus julgamentos existentes. Não gera anúncios, não chama IA paga.",
+    "inputSchema": {
+      "properties": {},
+      "title": "treinar_modeloArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": false,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "coleta_politica",
+    "description": "Custos, fontes, limites e disponibilidade confirmada da fila da sua conta. Leia antes de solicitar coleta.",
+    "inputSchema": {
+      "properties": {},
+      "title": "coleta_politicaArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "coleta_solicitar",
+    "description": "Solicita coleta COM RESERVA DE CRÉDITOS. Requer consentimento de gasto e política disponível. Reuse a mesma chave somente para repetir o MESMO pedido após dúvida de entrega; não há retry automático.",
+    "inputSchema": {
+      "properties": {
+        "fonte": {
+          "title": "Fonte",
+          "type": "string"
+        },
+        "q": {
+          "title": "Q",
+          "type": "string"
+        },
+        "chave_idempotencia": {
+          "title": "Chave Idempotencia",
+          "type": "string"
+        },
+        "pais": {
+          "default": "BR",
+          "title": "Pais",
+          "type": "string"
+        },
+        "max_paginas": {
+          "default": 1,
+          "title": "Max Paginas",
+          "type": "integer"
+        },
+        "limite": {
+          "default": 20,
+          "title": "Limite",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "fonte",
+        "q",
+        "chave_idempotencia"
+      ],
+      "title": "coleta_solicitarArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "coletas",
+    "description": "Lista somente as coletas da sua conta, para acompanhar ou resolver resultado incerto.",
+    "inputSchema": {
+      "properties": {},
+      "title": "coletasArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "coleta_consultar",
+    "description": "Consulta estado e resultados da sua coleta. Job de outra pessoa é recusado pela API.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "coleta_consultarArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": true,
+      "destructiveHint": false,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "coleta_cancelar",
+    "description": "Solicita cancelamento da sua coleta. A API decide reserva/reembolso; trabalho já enviado pode ficar incerto.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "coleta_cancelarArguments",
+      "type": "object"
+    },
+    "annotations": {
+      "readOnlyHint": false,
+      "destructiveHint": true,
+      "idempotentHint": true,
+      "openWorldHint": true
+    }
+  },
+  {
+    "name": "minerar",
+    "description": "Coleta anúncios NO AR agora. Duas fontes com papéis diferentes:\n`fonte=\"adheart\"` = DESCOBRIR candidatos no catálogo: busca por termo (q = termos amplos separados\npor vírgula, pais = br/de/us…), `sort=\"total_reach\"` (alcance acumulado estimado, o default) ou `\"creation_date\"` (recentes);\nGASTA COTA por termo, então poucos termos amplos e páginas fundas. Devolve staging_id + amostra — nada entra\nno acervo até adheart(acao=\"aprovar\").\n`fonte=\"meta\"` = MEDIR e ATRIBUIR: Biblioteca de Anúncios (q = frase; rola até o platô no país; devolve `job`\n— status(job), 2–10 min). Uma coleta Meta por vez; 1–2 buscas por país e a fonte trava por ~12 h: comece por\ntermo de volume, alterne país entre buscas.",
+    "inputSchema": {
+      "properties": {
+        "q": {
+          "title": "Q",
+          "type": "string"
+        },
+        "pais": {
+          "default": "US",
+          "title": "Pais",
+          "type": "string"
+        },
+        "fonte": {
+          "default": "meta",
+          "title": "Fonte",
+          "type": "string"
+        },
+        "search_type": {
+          "default": "keyword_unordered",
+          "title": "Search Type",
+          "type": "string"
+        },
+        "max_rodadas": {
+          "default": 80,
+          "title": "Max Rodadas",
+          "type": "integer"
+        },
+        "nicho": {
+          "default": "",
+          "title": "Nicho",
+          "type": "string"
+        },
+        "max_pages": {
+          "default": 8,
+          "title": "Max Pages",
+          "type": "integer"
+        },
+        "last_active": {
+          "default": 0,
+          "title": "Last Active",
+          "type": "integer"
+        },
+        "sort": {
+          "default": "total_reach",
+          "title": "Sort",
+          "type": "string"
+        }
+      },
+      "required": [
+        "q"
+      ],
+      "title": "minerarArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "google",
+    "description": "Google/YouTube sem depender da Meta. `modo=\"descobrir\"`: q = 1–3 termos do nicho separados por `;`,\nretorna anunciantes ATC, domínios observados e IDs dos vídeos pagos encontrados nos previews.\n`modo=\"dominio\"`: q = hostname de uma oferta; mede inventário, datas, anunciantes e vídeos do domínio.\nUma consulta ATC por vez, limites explícitos: páginas <=10, anunciantes <=12, vídeos <=10.\nDevolve job: use status(job, esperar=60), depois google_resultados(job). O ATC confirma anúncio pago,\nmas contagem de criativos não mede escala no YouTube; use youtube_video() e a série >=24h.",
+    "inputSchema": {
+      "properties": {
+        "q": {
+          "title": "Q",
+          "type": "string"
+        },
+        "pais": {
+          "default": "US",
+          "title": "Pais",
+          "type": "string"
+        },
+        "modo": {
+          "default": "descobrir",
+          "title": "Modo",
+          "type": "string"
+        },
+        "max_pages": {
+          "default": 3,
+          "title": "Max Pages",
+          "type": "integer"
+        },
+        "max_anunciantes": {
+          "default": 6,
+          "title": "Max Anunciantes",
+          "type": "integer"
+        },
+        "max_videos": {
+          "default": 6,
+          "title": "Max Videos",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "q"
+      ],
+      "title": "googleArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "google_resultados",
+    "description": "Resultados de google() paginados por anunciante/domínio, com IDs de vídeos e creative_id.\nSó a pessoa que iniciou o job pode ler. `cobertura` informa sugestões não sondadas.\nDomínio observado no criativo não é landing confirmada; `destino_exato_confirmado=false`\nexige verificação do elo anúncio → oferta. Vídeo sem ID ou domínio é lacuna, não zero de escala.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        },
+        "pagina": {
+          "default": 1,
+          "title": "Pagina",
+          "type": "integer"
+        },
+        "por_pagina": {
+          "default": 6,
+          "title": "Por Pagina",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "google_resultadosArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "fontes",
+    "description": "Inventário das dez fontes credenciadas e das bibliotecas Meta/Google.\n`pre_requisitos_presentes` confirma apenas arquivos e nomes de credencial; consulte um job limitado\nantes de afirmar que a sessão, assinatura, quota ou resposta do fornecedor funcionam.",
+    "inputSchema": {
+      "properties": {},
+      "title": "fontesArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "planejar_fontes",
+    "description": "Planeja sem coleta e sem custo: Meta, YouTube, ambas, native ou push; descobrir ou validar\num hostname. Devolve as dez fontes credenciadas como usar, condicional ou fora do recorte,\nmais bibliotecas públicas, capacidades e último teste da pessoa. Use no início de cada\nrodada e registre a decisão de cada fonte. Acesso anterior não garante sessão atual;\n`volume_catalogo` não é escala nem substitui confirmação na biblioteca pública.",
+    "inputSchema": {
+      "properties": {
+        "rede": {
+          "title": "Rede",
+          "type": "string"
+        },
+        "pais": {
+          "title": "Pais",
+          "type": "string"
+        },
+        "intencao": {
+          "default": "descobrir",
+          "title": "Intencao",
+          "type": "string"
+        },
+        "alvo": {
+          "default": "",
+          "title": "Alvo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "rede",
+        "pais"
+      ],
+      "title": "planejar_fontesArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "minerador",
+    "description": "Consulta limitada de AmericanSwipe, VAV, Anstrex, Trendtrack, MineraROI, Foreplay,\nAdyntel, Tyver ou SpyHouse. VAV: modo catalogo, dominio (q=hostname), canal\n(q=nome), channel_id (q=id) ou leaderboard (uma página); modo vazio escolhe domínio\nquando q existe e catálogo quando não. AmericanSwipe, Anstrex e MineraROI são\ncatálogos; Foreplay não filtra país.\nDevolve job: use status(job, esperar=60) e minerador_resultados(job). O resultado fica privado\npor pessoa, sem publicação automática no acervo. Catálogo não confirma veiculação atual.",
+    "inputSchema": {
+      "properties": {
+        "fonte": {
+          "title": "Fonte",
+          "type": "string"
+        },
+        "q": {
+          "default": "",
+          "title": "Q",
+          "type": "string"
+        },
+        "pais": {
+          "default": "US",
+          "title": "Pais",
+          "type": "string"
+        },
+        "max_pages": {
+          "default": 1,
+          "title": "Max Pages",
+          "type": "integer"
+        },
+        "limite": {
+          "default": 20,
+          "title": "Limite",
+          "type": "integer"
+        },
+        "modo": {
+          "default": "",
+          "title": "Modo",
+          "type": "string"
+        }
+      },
+      "required": [
+        "fonte"
+      ],
+      "title": "mineradorArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "minerador_resultados",
+    "description": "Resultado paginado de minerador(job). `filtro` busca no resultado já coletado, sem gastar\nnova cota; útil para catálogos grandes sem busca nativa. `tipo` = oferta|criativo|video|canal;\n`ordenar` = original|volume_catalogo|subindo|recente. Volume e `subindo` são sinais do\nfornecedor, nunca escala confirmada. Devolve bruto e filtrado como contagens separadas.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        },
+        "pagina": {
+          "default": 1,
+          "title": "Pagina",
+          "type": "integer"
+        },
+        "por_pagina": {
+          "default": 20,
+          "title": "Por Pagina",
+          "type": "integer"
+        },
+        "filtro": {
+          "default": "",
+          "title": "Filtro",
+          "type": "string"
+        },
+        "tipo": {
+          "default": "",
+          "title": "Tipo",
+          "type": "string"
+        },
+        "ordenar": {
+          "default": "original",
+          "title": "Ordenar",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "minerador_resultadosArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "youtube_video",
+    "description": "Lê 1–3 vídeos públicos do YouTube por video_id: views, publicação, não listado, canal e inscritos,\ncom horário UTC. Passe `pais` do Goal explicitamente; o default US existe só por compatibilidade.\nA leitura isolada é inventário; repita os mesmos IDs após >=24h para medir views/dia.\nUm ID vindo do ATC liga o vídeo a anúncio pago; views sozinhas não provam entrega paga nem vendas.",
+    "inputSchema": {
+      "properties": {
+        "ids": {
+          "title": "Ids",
+          "type": "string"
+        },
+        "pais": {
+          "default": "US",
+          "title": "Pais",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ids"
+      ],
+      "title": "youtube_videoArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "paginas",
+    "description": "O gate AUDIÊNCIA/PERSONAS: abre o perfil de cada Página que anuncia na busca `q` no país e devolve\nseguidores, \"seguindo 0\", categoria e e-mail — por Página. Job em segundo plano (1–5 min, entra na\nmesma fila da Meta): acompanhe com status(job). Persona = 1–350 seguidores, \"Blog pessoal\"; Página\n≥ 10 mil = marca, registrar sem promover.",
+    "inputSchema": {
+      "properties": {
+        "q": {
+          "title": "Q",
+          "type": "string"
+        },
+        "pais": {
+          "default": "US",
+          "title": "Pais",
+          "type": "string"
+        }
+      },
+      "required": [
+        "q"
+      ],
+      "title": "paginasArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "cancelar",
+    "description": "Interrompe um job de minerar(), paginas(), google() ou minerador() que ainda está rodando.\nO que já foi coletado não é aproveitado; o job vira `cancelado`.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "cancelarArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "status",
+    "description": "Andamento ou resultado de um job de minerar()/paginas()/google()/minerador(): rodando (minutos, últimas linhas, dica se a\nsessão travou) ou pronto (cabeçalho, IDs, bloqueada, destinos por hostname e triagem pela assinatura do\nadvertorial). `esperar=60` segura a resposta no servidor até 60 s enquanto o job roda — use SEMPRE em vez\nde chamar em sequência. Guarde o resumo em meu/dados/<job>.json; o dado bruto vem por anuncios(job).",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        },
+        "esperar": {
+          "default": 0,
+          "title": "Esperar",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "statusArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "anuncios",
+    "description": "O dado bruto de um job pronto, paginado: por anúncio, id, data de início, nome da Página, destino\n(hostname) e a copy resumida. Filtre por `destino` pra contar Páginas-persona de uma oferta e ler o\nfunil. Salve o que usar em meu/dados/.",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        },
+        "destino": {
+          "default": "",
+          "title": "Destino",
+          "type": "string"
+        },
+        "pagina": {
+          "default": 1,
+          "title": "Pagina",
+          "type": "integer"
+        },
+        "por_pagina": {
+          "default": 150,
+          "title": "Por Pagina",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "job"
+      ],
+      "title": "anunciosArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "medir",
+    "description": "REGRA PRIMORDIAL: a leitura de um job pronto para o destino `chave` (hostname), com os quatro eixos\n(inventário, atribuição, personas, persistência), pronta pra sua série local:\n`python scripts/escala_serie.py registrar-json --de <arquivo>`. Leitura bloqueada nunca vira medida.\n1 leitura = inventário; só 2 leituras separadas por ≥24 h autorizam \"indícios de escala\".",
+    "inputSchema": {
+      "properties": {
+        "job": {
+          "title": "Job",
+          "type": "string"
+        },
+        "chave": {
+          "title": "Chave",
+          "type": "string"
+        },
+        "rodada": {
+          "default": "",
+          "title": "Rodada",
+          "type": "string"
+        }
+      },
+      "required": [
+        "job",
+        "chave"
+      ],
+      "title": "medirArguments",
+      "type": "object"
+    },
+    "annotations": null
+  },
+  {
+    "name": "adheart",
+    "description": "Fecha a própria busca AdHeart: `aprovar` baixa o staging para o acervo; `descartar` apaga.\nStagings de outra pessoa ou antigos sem vínculo registrado exigem revisão do operador.\n",
+    "inputSchema": {
+      "properties": {
+        "acao": {
+          "title": "Acao",
+          "type": "string"
+        },
+        "staging_id": {
+          "title": "Staging Id",
+          "type": "string"
+        }
+      },
+      "required": [
+        "acao",
+        "staging_id"
+      ],
+      "title": "adheartArguments",
+      "type": "object"
+    },
+    "annotations": null
+  }
+]
