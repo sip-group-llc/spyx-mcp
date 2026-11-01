@@ -422,7 +422,7 @@ salvo mudança explícita do pedido.
   nunca como preview do criativo. Mídia indisponível fica como lacuna.
 - **Padrão visual:** fichas legíveis por oferta, imagens com proporção preservada,
   texto sem cortes e URLs completas clicáveis na própria célula. Preferência mais
-  recente: modelo `D:/Downloads/Arasaka R003 — anúncios, previews e funis.xlsx`, abas
+  recente: modelo `D:/Downloads/Spy X R003 — anúncios, previews e funis.xlsx`, abas
   Comparativo, Previews e Funis; números, contagens e datas centralizados horizontal
   e verticalmente. Substitui a referência anterior R004 com Ranking/Fontes/Descartes.
   Cada ficha traz oferta, rede/mercado, análise do criativo, métricas com fonte,

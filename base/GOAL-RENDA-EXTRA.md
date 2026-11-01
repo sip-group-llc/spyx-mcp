@@ -31,7 +31,7 @@ PARÂMETRO. REGIÃO vazia: UMA pergunta, nada de busca antes. NICHO fixo: renda 
 
 O PADRÃO. Marca sem rosto, servida por várias Páginas com nome de pessoa e audiência ~0, empurrando um QUIZ cujo preço só aparece depois de responder. Copy em primeira pessoa ("tenho 52 anos, era enfermeira"). Calibração (R017, fora do nicho): quiz.eroscode.de 598 IDs/5 personas, quiz.musesacademy.io 541/8. Em renda extra esse padrão AINDA NÃO FOI MEDIDO. HighTicket 767 e Viral VFX 940 têm escala, mas com marca-pessoa.
 
-Trabalhar em D:/Projetos/HackingAds. Antes de buscar, ler GOAL-RENDA-EXTRA.md (procedimento completo), CRITERIOS.md inteiro (REGRA PRIMORDIAL e ASSINATURAS primeiro), OFERTAS-MAPEADAS.md, README.md e R016–R018.
+Trabalhar em D:/Projetos/Spy X. Antes de buscar, ler GOAL-RENDA-EXTRA.md (procedimento completo), CRITERIOS.md inteiro (REGRA PRIMORDIAL e ASSINATURAS primeiro), OFERTAS-MAPEADAS.md, README.md e R016–R018.
 
 EXCLUSÃO. Cruzar /meus (solaris), favoritas, utilizadas e OFERTAS-MAPEADAS por identidade (nome, aliases, produtor, domínio, produto, entregável). Persona nova da mesma operação NÃO é oferta nova. Já mapeadas: fit4me, HighTicket, Coursiv, FPA, She Sells, 20-Minute Trader, Booming, Wealth Creators, Digitale Safari, Golden Voice, brandyourvoice, Viral VFX, Smartphone Freedom, Warrior Trading.
 
@@ -151,7 +151,7 @@ leaderboard do VAV. Não colar as duas versões no mesmo `/goal`.
 ```
 Auditar os infoprodutos de RENDA EXTRA mais escalados dos EUA (make money online, side hustle, freelancing, e-commerce/dropshipping, afiliados, IA para ganhar dinheiro, trading educacional) e entregar 3 finalistas NOVAS SEM AUDIÊNCIA PRÓPRIA, ao menos uma na Meta e uma no Google/YouTube.
 
-Trabalhar em D:/Projetos/HackingAds. Antes de buscar, ler projeto/treinamento/GOAL-RENDA-EXTRA.md (procedimento completo) mais CRITERIOS.md, OFERTAS-MAPEADAS.md, README.md do treinamento e as rodadas R013 a R015.
+Trabalhar em D:/Projetos/Spy X. Antes de buscar, ler projeto/treinamento/GOAL-RENDA-EXTRA.md (procedimento completo) mais CRITERIOS.md, OFERTAS-MAPEADAS.md, README.md do treinamento e as rodadas R013 a R015.
 
 EXCLUSÃO. Cruzar /meus (solaris, paginação completa), favoritas e utilizadas. Excluir por identidade — nome, aliases, produtor, domínio, produto, entregável — tudo do índice, em especial as 7 do gate completo (fit4me, HighTicket, Coursiv, FPA, She Sells, 20-Minute Trader, Booming Bookkeeping) e Wealth Creators. Outro afiliado ou criativo não cria novidade.
 
@@ -188,7 +188,7 @@ PARADA. Só terminar com 3 novas qualificadas cobrindo as duas redes e registros
 Encontrar e auditar os infoprodutos de RENDA EXTRA mais escalados dos Estados Unidos — make money online, side hustle, freelancing, e-commerce e dropshipping, afiliados, IA para ganhar dinheiro, trading educacional — entregando pelo menos 3 finalistas NOVAS, com no mínimo uma comprovada na Meta e uma no Google/YouTube. Entregar as melhores entre as efetivamente auditadas; nunca dizer "as mais escaladas do mundo".
 
 PREPARAÇÃO
-Trabalhar em D:/Projetos/HackingAds. Ler AGENTS.md, arasaka-ops (SKILL, fontes.md, coleta.md, escala.md), treinamento/README.md, CRITERIOS.md inteiro — as 27 lições, com atenção às 9 a 27 da R013 — OFERTAS-MAPEADAS.md incluindo a tabela "Quem passou o gate completo", e as rodadas R012 e R013. Cruzar `/meus` com identidade solaris em paginação completa, favoritas e utilizadas. Excluir por identidade — nome, aliases, produtor, domínio, produto, entregável — tudo que já está no índice, e em especial as sete que já passaram o gate completo: fit4me.io, HighTicket.io/Brook Hiddink, Coursiv, FPA Workshop/Fiction Profits Academy, She Sells/Shelby Sapp, 20-Minute Trader/JR Advance LLC e Booming Bookkeeping Business — e a Wealth Creators/Marvin Mitchell, descartada no recorte com 1.185 IDs. Outro afiliado ou outro criativo da mesma oferta não cria novidade. Registrar lacunas de acesso em vez de contorná-las.
+Trabalhar em D:/Projetos/Spy X. Ler AGENTS.md, arasaka-ops (SKILL, fontes.md, coleta.md, escala.md), treinamento/README.md, CRITERIOS.md inteiro — as 27 lições, com atenção às 9 a 27 da R013 — OFERTAS-MAPEADAS.md incluindo a tabela "Quem passou o gate completo", e as rodadas R012 e R013. Cruzar `/meus` com identidade solaris em paginação completa, favoritas e utilizadas. Excluir por identidade — nome, aliases, produtor, domínio, produto, entregável — tudo que já está no índice, e em especial as sete que já passaram o gate completo: fit4me.io, HighTicket.io/Brook Hiddink, Coursiv, FPA Workshop/Fiction Profits Academy, She Sells/Shelby Sapp, 20-Minute Trader/JR Advance LLC e Booming Bookkeeping Business — e a Wealth Creators/Marvin Mitchell, descartada no recorte com 1.185 IDs. Outro afiliado ou outro criativo da mesma oferta não cria novidade. Registrar lacunas de acesso em vez de contorná-las.
 
 DESCOBERTA — VAV primeiro, mas a página 1 é o teto; a Meta por frase de nicho é o que rende
 **Correção da R014:** o leaderboard `a/channels` só devolve a **página 1** (80 canais) nesta conta; páginas 2+

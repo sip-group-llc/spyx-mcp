@@ -1,4 +1,4 @@
-# HackingAds MCP
+# Spy X MCP
 
 <p align="center"><img src="docs/img/hero.svg" alt="anúncios minerados: quiz com persona, atribuição, série de escala" width="100%"></p>
 
@@ -15,7 +15,7 @@ e opera em conversa: o motor coleta, o seu Claude audita com um critério já ca
 dá o veredito, e o que você aprende fica gravado em `.md` que só você edita. A base do operador chega por
 `git pull`; a sua nunca é sobrescrita.
 
-## Conta Arasaka — atualização de 31/10/2026
+## Conta Spy X — atualização de 31/10/2026
 
 O endpoint agora anuncia **34 ferramentas**: as 14 do fluxo legado e 20 para
 conta, créditos, acervo, ranking, preferências e fila de coleta. Para as novas,
@@ -68,8 +68,8 @@ aprove ou reprove cada rodada por esses critérios.
 ## Comece
 
 ```bash
-git clone https://github.com/sip-group-llc/hackingads-mcp
-cd hackingads-mcp
+git clone https://github.com/sip-group-llc/spyx-mcp
+cd spyx-mcp
 ```
 
 Escolha o cliente:
@@ -86,13 +86,13 @@ Na primeira abertura, aceite a confiança na pasta para carregar o `.mcp.json` e
 `%USERPROFILE%\.codex\config.toml`) e substitua `<SUA_CHAVE>`:
 
 ```toml
-[mcp_servers.hackingads]
+[mcp_servers.spyx]
 url = "https://arasaka.corex11.tech/mcp"
 http_headers = { Authorization = "Bearer <SUA_CHAVE>" }
 ```
 
 Abra esta pasta em uma nova tarefa do Codex; o [AGENTS.md](AGENTS.md) orienta o fluxo. Confira se o MCP
-`hackingads` aparece com `planejar_fontes`, `fontes`, `minerador`, `minerador_resultados`, `google`, `minerar` e `status`. O
+`spyx` aparece com `planejar_fontes`, `fontes`, `minerador`, `minerador_resultados`, `google`, `minerar` e `status`. O
 `config.toml` é pessoal; não coloque a chave em arquivos versionados nem publique seu `.mcp.json` editado.
 Se atualizar o pacote, `python scripts/check_mcp_contract.py` confere se as
 ferramentas documentadas, as permissões e o roteamento continuam coerentes.

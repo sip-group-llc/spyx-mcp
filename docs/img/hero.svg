@@ -17,7 +17,7 @@
   <circle cx="1040" cy="60" r="180" fill="#e5484d" opacity=".07" filter="url(#glow)"/>
 
   <!-- título -->
-  <text x="48" y="74" font-size="34" font-weight="800" fill="#e6edf3" letter-spacing="-.5">HackingAds MCP</text>
+  <text x="48" y="74" font-size="34" font-weight="800" fill="#e6edf3" letter-spacing="-.5">Spy X MCP</text>
   <text x="48" y="104" font-size="15" fill="#8b98a5">anúncios NO AR agora · minerados pelo seu Claude · critério que sobrevive à repetição da medida</text>
 
   <!-- CARD 1 -->

@@ -1,7 +1,7 @@
-# Sua conta Arasaka pelo MCP
+# Sua conta Spy X pelo MCP
 
 O endpoint é `https://arasaka.corex11.tech/mcp`. As 20 ferramentas da conta usam
-uma chave pessoal `ar_`, criada na área autenticada do Arasaka. Coloque essa chave
+uma chave pessoal `ar_`, criada na área autenticada do Spy X. Coloque essa chave
 no header `Authorization: Bearer SUA_CHAVE` da configuração privada do cliente.
 Não envie chaves ou senhas em conversa, URLs ou commits.
 

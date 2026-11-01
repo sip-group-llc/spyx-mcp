@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "hackingads": {
+    "spyx": {
       "type": "http",
       "url": "https://arasaka.corex11.tech/mcp",
       "headers": { "Authorization": "Bearer <SUA_CHAVE>" }

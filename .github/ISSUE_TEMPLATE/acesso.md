@@ -1,6 +1,6 @@
 ---
 name: Pedir acesso
-about: Solicitar uma chave para conectar o HackingAds MCP
+about: Solicitar uma chave para conectar o Spy X MCP
 title: "Acesso: <seu nome ou empresa>"
 labels: acesso
 ---

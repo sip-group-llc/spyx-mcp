@@ -1,6 +1,6 @@
 # Laboratório de mineração com feedback
 
-Memória operacional persistente do Arasaka. Antes de cada rodada, o agente lê este
+Memória operacional persistente do Spy X. Antes de cada rodada, o agente lê este
 arquivo, [critérios e lições](CRITERIOS.md), [métricas](METRICAS.md), o histórico
 `avaliacoes.jsonl` e a última rodada. Isso orienta a busca nas próximas conversas
 neste projeto; não altera os pesos do modelo de linguagem.
